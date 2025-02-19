@@ -1,5 +1,7 @@
 package test;
 import java.util.Scanner;
+// 수정할 거 private를 배열 3명잡고 만들기 메인 안으로 넣기`
+// 메소드 말고 제어문으로 음.. 모르겠다
 
 public class Bank {
     private static String id;     // 아이디 전역변수
@@ -10,6 +12,7 @@ public class Bank {
     private static String pwinput; //사용자한테 입력받은 비번 전역변수
 
     public static void main(String[] args) {
+    	
         Scanner sc = new Scanner(System.in);
 
         while (true) { //기본으로 은행서비스 선택하는 창과 입력값 무한반복
@@ -18,6 +21,9 @@ public class Bank {
 
             int input = sc.nextInt(); //은행서비스를 뭐 쓸꺼냐?
             
+            if(input <=2 && input <6) {
+            	
+            }
             switch (input) {
                 case 1: //추가 아이디 비번, 추가
                     System.out.println("아이디 입력 : ");  // 아디설정

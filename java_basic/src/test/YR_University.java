@@ -1,5 +1,9 @@
 package test;
 import java.util.Scanner;
+//수정할 거 
+//1. 전역변수 배열로 수정하여 메모리 아끼기
+//2. 중복된 코드 삭제
+//3. 학사일정 캘린더 구글링해서 시도하기
 
 public class YR_University {
 	private static String Tnum;  //교수 번호 전역변수
