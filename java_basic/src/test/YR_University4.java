@@ -2,7 +2,8 @@ package test;
 import java.util.Scanner;
 //교수번호 (년도 - 4자리수)로 나오게 구현 아직 안함, 아이디 비번찾기 기능 구현안함, case 5: 캘린더
 //02.20.13:15 아이디 비밀번호 찾기 구현완료
-//
+//02.20.14:20 교수번호 (년도-4자리) 구현완료 (구글링)
+//캘린더는 날 좋을 때 시도해보겠습니다!
 
 public class YR_University4 {
     public static void main(String[] args) {
@@ -46,6 +47,12 @@ public class YR_University4 {
                 case 1: // 교수 등록  
                     System.out.println("교수 번호 입력 : ");  // 교수번호  
                     String newTnum = sc.next();  
+                    
+                    while (!newTnum.matches("\\d{2}-\\d{4}")) {
+                        System.out.println("올바른 교수 번호 형식이 아닙니다. 다시 입력해주세요 (예: 21-1234): ");
+                        newTnum = sc.next();
+                    }
+                    
                     System.out.println("이름 입력 : ");  
                     String newname = sc.next();  
                     System.out.println("id 입력 : ");  
@@ -286,6 +293,7 @@ public class YR_University4 {
                     }
                     break;
                 case 5: //학사일정
+                	
                 
                 case 9: // 관리자 시스템 종료
                     System.out.println("프로그램을 종료합니다.");
