@@ -1,4 +1,4 @@
-package test;
+package bank;
 import java.util.Scanner;
 //수정할 거 private를 배열 3명잡고 만들기 메인 안으로 넣기` > 완료
 //메소드 말고 제어문으로 중복코드 삭제 > if문 사용 만약 input값이 2 or 3 or 4 or 5라면 아디입력 비번입력 나오게하고 

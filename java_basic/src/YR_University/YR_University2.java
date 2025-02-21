@@ -1,4 +1,4 @@
-package test;
+package YR_University;
 import java.util.Scanner;
 
 public class YR_University2 {

@@ -1,4 +1,4 @@
-package test;
+package KoreanAir;
 import java.util.Scanner;
 
 public class KoreanAir {

@@ -1,4 +1,4 @@
-package test;
+package YR_University;
 import java.util.Scanner;
 //수정할 거 
 //1. 전역변수 배열로 수정하여 메모리 아끼기

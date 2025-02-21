@@ -1,4 +1,4 @@
-package test;
+package YR_University;
 import java.util.Scanner;
 //교수번호 (년도 - 4자리수)로 나오게 구현 아직 안함, 아이디 비번찾기 기능 구현안함, case 5: 캘린더
 //02.20.13:15 아이디 비밀번호 찾기 구현완료
@@ -282,9 +282,9 @@ public class YR_University4 {
                                     }
                                     break;
 
-                                case 9: // 관리시스템 종료
-                                    System.out.println("프로그램을 종료합니다.");
-                                    return;
+//                                case 9: // 관리시스템 종료
+//                                    System.out.println("프로그램을 종료합니다.");
+//                                    return;
 
                                 default: // 입력값 이상하면
                                     System.out.println("제대로 된 입력값을 넣으세요.");

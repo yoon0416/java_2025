@@ -1,4 +1,4 @@
-package test;
+package YR_University;
 import java.util.Scanner;
 //break문 함부로 남발하다가 값 안나왔음.. 담에는 코드흐름 잘 보면서 break써야겠다
 //break문이 문제인건 알았지만 너무 많은 break사이에 문제인 break문 찾다가 시간 다 쓸거 같아서 구글링으로 찾음

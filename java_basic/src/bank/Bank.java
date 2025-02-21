@@ -1,4 +1,4 @@
-package test;
+package bank;
 import java.util.Scanner;
 // 수정할 거 private를 배열 3명잡고 만들기 메인 안으로 넣기`
 // 메소드 말고 제어문으로 음.. 모르겠다
