@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 // 수정해야할 것:
 //1. 생년월일 숫자8자리(YYMMDD)형식으로 나오게 //02.22 20 : 14 수정완료 > 재수정 필요.. > 수정완료
-//2. email 이메일 형식으로 abc@gmail.com
+//2. email 이메일 형식으로 abc@gmail.com // 구현완료
 //3. 여권번호 M+숫자8자리
 
 public class main {
