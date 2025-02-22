@@ -7,7 +7,7 @@ import java.util.Scanner;
 //4. 회원가입 시 비번 한번 더 입력 그리고 비번 맞게 쓴지 체크 > 02.22 20:58 구현
 
 // 수정해야할 것:
-//1. 생년월일 숫자8자리(YYMMDD)형식으로 나오게 //02.22 20 : 14 수정완료
+//1. 생년월일 숫자8자리(YYMMDD)형식으로 나오게 //02.22 20 : 14 수정완료 > 재수정 필요..
 //2. email 이메일 형식으로 abc@gmail.com
 //3. 여권번호 M+숫자8자리
 
@@ -21,7 +21,7 @@ public class main {
 		String[] pw = new String[3]; //pw
 		String[] name = new String[3]; //이름
 		String[] engname = new String[3]; //영문이름
-		int[] brith = new int[3]; //생년월일
+		String[] brith = new String[3]; //생년월일
 		int[] mafe = new int[3]; //성별
 		String[] email = new String[3]; //email
 		int[] number = new int[3]; //전번
@@ -118,9 +118,11 @@ public class main {
             	    String newname = sc.next();
             	    System.out.println("영문이름 입력 : ");  // 영문이름
             	    String newengname = sc.next();
-            	    System.out.println("생년월일 : ");  // 생년월일
-            	    int newbrith = sc.nextInt();
-            	    if (newbrith < 100000 || newbrith > 999999) {
+            	    System.out.println("생년월일(YYMMDD) 입력 : ");
+            	    String newbrith = sc.next();
+
+            	    // 생년월일 6자리 숫자 확인
+            	    if (newbrith.length() != 6 || !newbrith.matches("\\d{6}")) {
             	        System.out.println("잘못된 생년월일 형식입니다. 6자리 숫자로 입력해주세요.");
             	        break;
             	    }
@@ -133,6 +135,13 @@ public class main {
             	    }
             	    System.out.println("email 입력 : ");
             	    String newemail = sc.next();
+            	    //이메일 정규식 검색
+            	    String emailPattern = "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
+            	    if (!newemail.matches(emailPattern)) {
+            	        System.out.println("잘못된 이메일 형식입니다. 올바른 이메일 주소를 입력해주세요.");
+            	        break;
+            	    }
+            	    
             	    System.out.println("전화번호 입력 : ");
             	    int newnumber = sc.nextInt();
             	    System.out.println("여권번호 입력 : ");
@@ -178,7 +187,7 @@ public class main {
                 			 pw[j] = null;
                 			 name[j] = null;
                 			 engname[j] = null;
-                			 brith[j] = 0;
+                			 brith[j] = null;
                 			 mafe[j] = 0;
                 			 email[j] = null;
                 			 number[j] = 0;
