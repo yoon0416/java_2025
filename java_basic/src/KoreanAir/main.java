@@ -7,7 +7,7 @@ import java.util.Scanner;
 //4. 회원가입 시 비번 한번 더 입력 그리고 비번 맞게 쓴지 체크 > 02.22 20:58 구현
 
 // 수정해야할 것:
-//1. 생년월일 숫자8자리(YYMMDD)형식으로 나오게
+//1. 생년월일 숫자8자리(YYMMDD)형식으로 나오게 //02.22 20 : 14 수정완료
 //2. email 이메일 형식으로 abc@gmail.com
 //3. 여권번호 M+숫자8자리
 
@@ -120,6 +120,11 @@ public class main {
             	    String newengname = sc.next();
             	    System.out.println("생년월일 : ");  // 생년월일
             	    int newbrith = sc.nextInt();
+            	    if (newbrith < 100000 || newbrith > 999999) {
+            	        System.out.println("잘못된 생년월일 형식입니다. 6자리 숫자로 입력해주세요.");
+            	        break;
+            	    }
+            	    
             	    System.out.println("성별) 1>남자    2>여자 : ");  // 성별
             	    int newmafe = sc.nextInt();
             	    if(newmafe != 1 && newmafe != 2) {
