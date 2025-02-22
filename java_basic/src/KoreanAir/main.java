@@ -3,8 +3,8 @@ import java.util.Scanner;
 // 추가해야할 것: 
 //1. 항공권 예약 시 출발 도착 가는날 오는날 사용자가 입력해서 해당값 db(배열)에서 찾기
 //2. 항공권 예약 시 예약된 좌석 색변경
-//3. 회원가입 시 중복된 아이디 찾기
-//4. 회원가입 시 비번 한번 더 입력 그리고 비번 맞게 쓴지 체크
+//3. 회원가입 시 중복된 아이디 찾기 > 02.22 20:58 구현
+//4. 회원가입 시 비번 한번 더 입력 그리고 비번 맞게 쓴지 체크 > 02.22 20:58 구현
 
 // 수정해야할 것:
 //1. 생년월일 숫자8자리(YYMMDD)형식으로 나오게
@@ -83,50 +83,77 @@ public class main {
                      }
                  }
                  break; // 로그인 반복문 종료
-             case 2: //회원가입
-            	 System.out.println("아이디 입력 : ");
-            	 String newid = sc.next();
-            	 System.out.println("비밀번호 입력 : ");
-            	 String newpw = sc.next();
-            	 System.out.println("이름 입력 : ");  // 이름
-                 String newname = sc.next();
-                 System.out.println("영문이름 입력 : ");  // 영문이름
-                 String newengname = sc.next();
-                 System.out.println("생년월일 : ");  // 생년월일
-                 int newbrith = sc.nextInt();
-                 System.out.println("성별) 1>남자    2>여자 : ");  // 성별
-                 int newmafe = sc.nextInt();
-                 if(newmafe != 1 && newmafe !=2) {
-                	 System.out.println("잘못된 성별 입력입니다.");
-                	 break;
-                 }
-                 System.out.println("email 입력 : ");
-                 String newemail = sc.next();
-                 System.out.println("전화번호 입력 : ");
-                 int newnumber = sc.nextInt();
-                 System.out.println("여권번호 입력 : ");
-                 String newpassnum = sc.next();
-                 System.out.println("거주국가 입력 : ");
-                 String newcon = sc.next();
                  
-                 for (int i = 0; i < 3; i++) {
-                     if (id[i] == null) {
-                         id[i] = newid; //아디
-                         pw[i] = newpw; //비번
-                         name[i] = newname; //이름
-                         engname[i] = newengname; //영문이름
-                         brith[i] = newbrith; //생일
-                         mafe[i] = newmafe; //성별
-                         email[i] = newemail; //email
-                         number[i] = newnumber; //전번
-                         passnum[i] = newpassnum; //여권번호
-                         con[i] = newcon; //국가
-                         break;
-                     }
-                 }
-                
-                 System.out.printf("%s 님 가입을 환영합니다",newname);
-                 break;
+             case 2: // 회원가입
+            	    System.out.println("아이디 입력 : ");
+            	    String newid = sc.next();
+
+            	    // 중복된 아이디 체크
+            	    boolean isDuplicate = false;
+            	    for (int i = 0; i < 3; i++) {
+            	        if (id[i] != null && id[i].equals(newid)) {
+            	            isDuplicate = true;
+            	            break;
+            	        }
+            	    }
+            	    
+            	    if (isDuplicate) {
+            	        System.out.println("중복된 아이디입니다. 다른 아이디를 입력해주세요.");
+            	        break;
+            	    }
+
+            	    System.out.println("비밀번호 입력 : ");
+            	    String newpw = sc.next();
+
+            	    System.out.println("비밀번호를 한 번 더 입력해주세요 : ");
+            	    String confirmPw = sc.next();
+
+            	    // 비밀번호 일치 여부 확인
+            	    if (!newpw.equals(confirmPw)) {
+            	        System.out.println("비밀번호가 일치하지 않습니다. 다시 시도해주세요.");
+            	        break;
+            	    }
+
+            	    System.out.println("이름 입력 : ");  // 이름
+            	    String newname = sc.next();
+            	    System.out.println("영문이름 입력 : ");  // 영문이름
+            	    String newengname = sc.next();
+            	    System.out.println("생년월일 : ");  // 생년월일
+            	    int newbrith = sc.nextInt();
+            	    System.out.println("성별) 1>남자    2>여자 : ");  // 성별
+            	    int newmafe = sc.nextInt();
+            	    if(newmafe != 1 && newmafe != 2) {
+            	        System.out.println("잘못된 성별 입력입니다.");
+            	        break;
+            	    }
+            	    System.out.println("email 입력 : ");
+            	    String newemail = sc.next();
+            	    System.out.println("전화번호 입력 : ");
+            	    int newnumber = sc.nextInt();
+            	    System.out.println("여권번호 입력 : ");
+            	    String newpassnum = sc.next();
+            	    System.out.println("거주국가 입력 : ");
+            	    String newcon = sc.next();
+
+            	    for (int i = 0; i < 3; i++) {
+            	        if (id[i] == null) {
+            	            id[i] = newid; // 아디
+            	            pw[i] = newpw; // 비번
+            	            name[i] = newname; // 이름
+            	            engname[i] = newengname; // 영문이름
+            	            brith[i] = newbrith; // 생일
+            	            mafe[i] = newmafe; // 성별
+            	            email[i] = newemail; // email
+            	            number[i] = newnumber; // 전번
+            	            passnum[i] = newpassnum; // 여권번호
+            	            con[i] = newcon; // 국가
+            	            break;
+            	        }
+            	    }
+
+            	    System.out.printf("%s 님 가입을 환영합니다", newname);
+            	    break;
+
                  
                  
                  
