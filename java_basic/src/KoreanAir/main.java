@@ -10,7 +10,12 @@ import java.util.Scanner;
 // 수정해야할 것:
 //1. 생년월일 숫자8자리(YYMMDD)형식으로 나오게 //02.22 20 : 14 수정완료 > 재수정 필요.. > 수정완료
 //2. email 이메일 형식으로 abc@gmail.com // 구현완료
-//3. 여권번호 M+숫자8자리
+//3. 여권번호 M+숫자8자리 // 02.23 20:14 구현완료
+//4. 전화번호 형식 > int로 할경우 하이픈이 들어갈 수 있기 때문에 string으로 자료형 바꾸고 숫자만 포함되어 있는지 체크하는 형식으로 바꿈
+
+//.matches()는 문자열이 정규 표현식으로 정의된 패턴에 맞는지 확인하는 메서드입니다.
+//정규 표현식(정규식)은 문자나 숫자 패턴을 정의하는 방법으로, 복잡한 문자열 검증을 쉽게 할 수 있습니다. 출처 구글링
+
 
 public class main {
 
@@ -25,12 +30,10 @@ public class main {
 		String[] brith = new String[3]; //생년월일
 		int[] mafe = new int[3]; //성별
 		String[] email = new String[3]; //email
-		int[] number = new int[3]; //전번
+		String[] number = new String[3]; //전번
 		String[] passnum = new String[3]; //여권번호
 		String[] con = new String[3]; //거주국가
 	//---------------------------------------------
-		String inputid;
-		String inputpw;
 		
 		while (true) {
 			 System.out.println("\n=============================================================================");
@@ -134,7 +137,7 @@ public class main {
             	        System.out.println("잘못된 성별 입력입니다.");
             	        break;
             	    }
-            	    System.out.println("email 입력 : ");
+            	    System.out.println("email 입력  (ex: abc@gmail.com) : ");
             	    String newemail = sc.next();
             	    //이메일 정규식 검색
             	    String emailPattern = "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
@@ -143,10 +146,23 @@ public class main {
             	        break;
             	    }
             	    
-            	    System.out.println("전화번호 입력 : ");
-            	    int newnumber = sc.nextInt();
-            	    System.out.println("여권번호 입력 : ");
+            	    System.out.println("전화번호 입력 (하이픈 없이 숫자만 입력) : ");
+            	    String newnumber = sc.next();
+            	    if (!newnumber.matches("[0-9]+")) { // .matches == 문자열이 우리가 지정한 규칙(패턴)과 맞는지 체크하는 역할
+            	        System.out.println("잘못된 전화번호 형식입니다. 숫자만 입력해주세요.");
+            	        break;
+            	    }
+
+            	
+            	    System.out.println("여권번호 입력 (M+숫자8자리) : ");
             	    String newpassnum = sc.next();
+
+            	    // 여권번호 형식 체크 (M으로 시작하고 뒤에 8자리 숫자)
+            	    if (!newpassnum.matches("M\\d{8}")) {
+            	        System.out.println("잘못된 여권번호 형식입니다. 'M' + 8자리 숫자로 입력해주세요.");
+            	        break;
+            	    }
+
             	    System.out.println("거주국가 입력 : ");
             	    String newcon = sc.next();
 
@@ -191,7 +207,7 @@ public class main {
                 			 brith[j] = null;
                 			 mafe[j] = 0;
                 			 email[j] = null;
-                			 number[j] = 0;
+                			 number[j] = null;
                 			 passnum[j] = null;
                 			 con[j] = null;
                 			 System.out.println("삭제 되었습니다.");
