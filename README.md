@@ -254,5 +254,5 @@
 
 # 즐겨찾기
 - 변수명 짓기 : https://wordic.loeaf.com/variable-name
-- 어려운 개념정리 : chatgpt
+- 어려운 개념정리 : https://chatgpt.com
 - 유튜브 : 코딩애플(cs정보나 각종 응용들) , 노말틱(정보보안), 나도코딩(혼자서 공부할 때)
