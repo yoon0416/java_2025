@@ -22,7 +22,7 @@ public class KoreanAircases {
 
     Scanner scA = new Scanner(System.in);
 
-    // 항공권 정보를 출력하는 메서드
+    
     public void printFlightInfo() {
         System.out.println("============================================================= 항공권 정보 =============================================================");
         for (int i = 0; i < to.length; i++) {
@@ -180,7 +180,7 @@ public class KoreanAircases {
 
             //취소
             if (input7.equals("Y") || input7.equals("y")) {
-                for(int i=0; i<bookedTo.length; i++) {
+                for(int i=0; i<bookedTo.length;) {
                 	bookedTo[input6 -1] = null;
                 	bookedFrom[input6 -1] = null;
                 	bookedGoday[input6-1]= 0;
@@ -205,6 +205,7 @@ public class KoreanAircases {
             }
         }
     }//end cen
+    //취소
     public void qusrud() {
     	while (true) {  // 반복문을 사용하여 유효한 입력을 받을 때까지 계속 실행
        	 System.out.println("============================================================= 예약된 항공권 조회 =============================================================");
