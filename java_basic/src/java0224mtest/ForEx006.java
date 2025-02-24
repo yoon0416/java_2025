@@ -41,10 +41,10 @@ public class ForEx006 {
 			    System.out.println("올바른 연산자를 입력해주세요.");
 			    continue;  // 올바른 연산자를 입력할 때까지 계속 반복
 			}
-			else {
-				break; //무한반복 빠져나가는 브레이크 없으면 오류뜸
-			}
-			} //end while
+			
+			break; //없으면 무한반복 빠져나가지 못해서 뒤에 다 에러뜸
+			
+		} //end while
 		
 		//처리
 		if(input3 == '+') {
