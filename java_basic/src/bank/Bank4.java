@@ -5,6 +5,7 @@ import java.util.Scanner;
 //아디 비번 맞는지 확인은 case 2 3 4 5 안에서 하면 됨 완료!!!
 //if(fine)로 로그인 성공시 다음 과정 나오게 그 외는 아디비번 잘못됨으로 나오게
 //내가 부족한 점 : 출력문대로 만들라면 만들 수 있으나 여태 코드리뷰하고 메모리관리나 중복된 코드 제거 등 코드 수정을 한 적이 손에 꼽을 정도록 적음.
+//습득한 지식은 많지만 일단 bank 프로젝트말고 항공권 예약 시스템 프로젝트부터 수정
 
 public class Bank4 {
     public static void main(String[] args) {

@@ -24,20 +24,33 @@ public class KoreanAircases {
 
     
     public void printFlightInfo() {
+        // 항공권 검색기능
+        System.out.println("출발지 : ");
+        String inputto = scA.next();
+        System.out.println("도착지 : ");
+        String inputfrom = scA.next();
+        System.out.println("가는 날 : ");
+        String inputgoday = scA.next();
+        System.out.println("오는 날 : ");
+        String inputbackday = scA.next();
+
         System.out.println("============================================================= 항공권 정보 =============================================================");
         for (int i = 0; i < to.length; i++) {
-        	if(to[i]==null) {
-        		continue; //break쓰면 아무것도 안나옴 ;;
-        	}
-        	else {
-            System.out.print((i+1)+". "+"출발지: " + to[i]+" ");
-            System.out.print("도착지: " + from[i]+" ");
-            System.out.print("가는 날: " + goday[i]+" ");
-            System.out.print("오는 날: " + backday[i]+" ");
-            System.out.print("출발 시간: " + gotime[i]+" ");
-            System.out.print("도착 시간: " + backtime[i]+" ");
-            System.out.print("소요 시간: " + ingtime[i]+" \n");    
-        	}
+            // 항목에 키워드가 포함되어 있는지 체크
+            if (to[i] != null && from[i] != null) {
+                if (to[i].contains(inputto) && from[i].contains(inputfrom) && 
+                    Integer.toString(goday[i]).contains(inputgoday) && Integer.toString(backday[i]).contains(inputbackday)) {
+
+                    // 해당 항공편 출력
+                    System.out.print((i + 1) + ". 출발지: " + to[i] + " ");
+                    System.out.print("도착지: " + from[i] + " ");
+                    System.out.print("가는 날: " + goday[i] + " ");
+                    System.out.print("오는 날: " + backday[i] + " ");
+                    System.out.print("출발 시간: " + gotime[i] + " ");
+                    System.out.print("도착 시간: " + backtime[i] + " ");
+                    System.out.print("소요 시간: " + ingtime[i] + " \n");
+                }
+            }
         }
         System.out.println("=====================================================================================================================================");
         System.out.println("항공편 선택 > ");
@@ -49,6 +62,7 @@ public class KoreanAircases {
             return;
         }
 
+        // 예약 처리 부분은 기존과 동일하게 계속 유지
         for (int i = 0; i < bookedTo.length; i++) { // 배열에 값 넣기
             if (bookedTo[i] == null) { // 예약 가능한 자리 확인
                 bookedTo[i] = to[input3 - 1];
@@ -57,23 +71,23 @@ public class KoreanAircases {
                 bookedBackday[i] = backday[input3 - 1];
                 bookedGotime[i] = gotime[input3 - 1];
                 bookedBacktime[i] = backtime[input3 - 1];
-                
-                //예약해서 사라지게
+
+                // 예약 후 해당 항공편 정보 제거
                 to[input3 - 1] = null;
                 from[input3 - 1] = null;
-                goday[input3 - 1] =0;
-                backday[input3 - 1] =0;
-                gotime[input3 - 1] =null;
-                backtime[input3 - 1]=null;
-                ingtime[input3 - 1]=null;
-                
-                
+                goday[input3 - 1] = 0;
+                backday[input3 - 1] = 0;
+                gotime[input3 - 1] = null;
+                backtime[input3 - 1] = null;
+                ingtime[input3 - 1] = null;
+
                 break;
             }
         }
 
         printsel(input3);
-    } //end printFlightInfo
+    }
+ //end printFlightInfo
 
     // 좌석 선택 메서드
     public void printsel(int input3) {

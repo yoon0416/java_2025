@@ -1,4 +1,5 @@
-/* package KoreanAir;
+/* 초안이라 이 코드 안씁니다.
+ * package KoreanAir;
 import java.util.Scanner;
 
 public class KoreanAir {
