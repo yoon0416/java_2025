@@ -1,8 +1,12 @@
 package bank;
 import java.util.Scanner;
+// valueOf 메소드는 boolean, char, int  같은 다양한 타입의 값을 문자열로 변환해주는 메소드
+// parseInt()의 기능은 String타입의 숫자를 int타입으로 변환해주는 녀석
+// parseInt()는 인티저 클래스의 static 함수
+// 기존 입력받은 회원정보를 저장하는 id, pw, age, money 변수 삭제
 
 // 회원가입 클래스
-class MemberJoin1 {
+class MemberJoin1 { //얘 자주쓸꺼임 2차원 배열로 바꿔 원래 저장하던 id,pw 변수들 삭제함 이제부터 입력받고 바로 저장할 수 있음
     public void join(String[][] userData) { // 2차원 배열을 사용 층에는 유저정보, 칸에는 id,pw등을 담아서 매개변수가 저거 뿐임
         Scanner sc = new Scanner(System.in);
 
@@ -29,7 +33,7 @@ class MemberJoin1 {
     } //end public void join 메소드
 } //end class memberjoin1
 
-// 로그인 기능 클래스
+// 로그인 기능 클래스 안쓰는거 어거지로 쓰게 만들었
 class Login1 {
     public boolean login(String[][] userData, String idInput, String pwInput) {
         boolean fine = false;
@@ -154,7 +158,7 @@ public class Bank7 {  // 여기서 클래스 이름을 Bank7로 변경
                 System.out.println("비밀번호 입력 : ");
                 pwInput = sc.next();
 
-                fine = login1.login(userData, idInput, pwInput); 
+                fine = login1.login(userData, idInput, pwInput); //추가
                 if (!fine) {
                     System.out.println("아이디 또는 비밀번호가 잘못되었습니다.");
                     continue; // 로그인 실패 시 다시 메뉴로 돌아감
