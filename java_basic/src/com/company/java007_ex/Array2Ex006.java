@@ -31,7 +31,7 @@ public class Array2Ex006 {
             }
         }
         
-        // 결과 배열을 출력 (마지막 행은 제외하고 출력)
+        // 결과 배열을 출력
         for (int i = 0; i < datas.length; i++) {
             for (int j = 0; j < result[i].length; j++) {
                 System.out.print(result[i][j] + " ");  // 값 출력
