@@ -10,6 +10,7 @@ public class ArrayEx008 {
 	    int[] aver=new int[5];
 	    String[] hap= new String[5];
 	    String[] jang = new String[5];
+	    int[] rank = new int[5];
 	    
 //       1. 평균구하시오.
 //	     2. 합격,불합격   -  평균이 60점이상이면 합격, 아니면 불합격으로 처리하시오.
@@ -30,13 +31,26 @@ public class ArrayEx008 {
 	    		jang[i] = " ";
 	    	}
 	    } //end for
+	    //평균
+	    
+	    for(int i=0; i<aver.length; i++){ // i = 랭킹 인덱스
+            rank[i] = 1; //1등으로 초기화
+           
+            for (int j = 0; j < aver.length; j++) { // j = aver 인덱스                           
+                if(aver[i]<aver[j]){   //기준데이터가 나머지데이터라 비교했을때 적으면 rank[i] 카운트
+                    rank[i]++; //랭킹값 올라감                 
+                }              
+            }          
+        }      
+	    // 공부순서 컨트롤파트+2차원배열+동적배열 > 상속 > ?
+
 	    
 	    System.out.println(":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::\r\n");
-	    System.out.println("이름 \t 국어 \t 영어 \t 수학 \t 평균 \t 합격여부  장학생");
+	    System.out.println("이름 \t 국어 \t 영어 \t 수학 \t 평균 \t 합격여부   장학생    등수");
 	    System.out.println(":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::\r\n");
 	    
 	    for(int i=0; i<kor.length; i++) {
-	    System.out.printf("%s\t%d \t %d \t %d \t %d \t %s \t %s \n",name[i],kor[i], eng[i], mat[i], aver[i], hap[i], jang[i]);
+	    System.out.printf("%s\t%d \t %d \t %d \t %d \t %s \t %s \t %d등\n",name[i],kor[i], eng[i], mat[i], aver[i], hap[i], jang[i], rank[i]);
 	    }
 	    
 
