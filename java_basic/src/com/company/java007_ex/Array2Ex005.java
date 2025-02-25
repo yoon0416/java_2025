@@ -16,7 +16,8 @@ public class Array2Ex005 {
 			}
 			
 		}
-		avg = (double)total/12;
+		int totalLength = arr.length * arr[0].length;
+		avg = (double)total/totalLength;
 		
 		System.out.printf("총점 : %d \n평균 : %.1f",total,avg);
 		

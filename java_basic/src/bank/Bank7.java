@@ -4,6 +4,7 @@ import java.util.Scanner;
 // parseInt()의 기능은 String타입의 숫자를 int타입으로 변환해주는 녀석
 // parseInt()는 인티저 클래스의 static 함수
 // 기존 입력받은 회원정보를 저장하는 id, pw, age, money 변수 삭제
+// bank6인가 5에 클래스 명이랑 중복되서 뒤에 1붙임
 
 // 회원가입 클래스
 class MemberJoin1 { //얘 자주쓸꺼임 2차원 배열로 바꿔 원래 저장하던 id,pw 변수들 삭제함 이제부터 입력받고 바로 저장할 수 있음
