@@ -14,6 +14,10 @@ import java.util.Scanner;
 // sc.close 안해서 거슬리던 경고창 뜬거였음
 // sc.close()도 남발하니까 오류 뜸 일단 기존 sc.close 종료 기능쪽 제외하고 다 주석처리
 
+// 로그인 그 파트도 메소드 나누기 > 인터페이스 or extends 상속 
+// 캡슐화 상속 다형성 추상화
+
+
 // 회원가입 클래스
 class MemberJoin1 { //얘 자주쓸꺼임 2차원 배열로 바꿔 원래 저장하던 id,pw 변수들 삭제함 이제부터 입력받고 바로 저장할 수 있음
     public void join(String[][] userData) { // 2차원 배열을 사용 층에는 유저정보, 칸에는 id,pw등을 담아서 매개변수가 저거 뿐임
