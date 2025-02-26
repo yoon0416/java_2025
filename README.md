@@ -209,6 +209,7 @@
 - **변수명 짓기:** [Wordic](https://wordic.loeaf.com/variable-name)  
 - **어려운 개념 정리:** [ChatGPT](https://chatgpt.com)  
 - **코딩 테스트:** 백준(알고리즘), 프로그래머스(코딩테스트), SWEA(삼성 알고리즘 문제), 코드업(백준보다 난이도 낮음), 바킹독(다양한 알고리즘 자료 제공)
+- https://www.notion.com/ko 노션
 - **기술블로그:** 기술블로그(https://ccomccomhan.tistory.com/35) 
 - **유튜브:** 코딩애플(cs 정보, 응용), 노말틱(정보보안), 나도코딩(혼자 공부용)
 -  http://w3schools.com/
