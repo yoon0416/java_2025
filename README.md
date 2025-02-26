@@ -185,16 +185,22 @@
 - 여태 스캐너 쪽 노란색 경고가 들어온게 무슨 뜻인지 몰랐으나 알고보니 `close()`를 안했다 이 뜻이였음
   1. `close()` 안 하면 자원 누수 발생하고, 시스템 자원이 제대로 해제되지 않아 성능 저하나 예기치 않은 동작이 생길 수 있음. 큰 프로그램에서는 이게 더 중요한 문제로 커질 수 있음.
   
-## 2025-02-25  
+## 2025-02-26  
 - 2차원 배열 연습문제
 - 메소드 선언 및 호출
+- `math.random`으로 난수 만들기
 
 **수정 완료:**  
 - bank 프로젝트 `sc.close()`를 무조건 써야하는 줄 알았는데 내가 잘못한지 모르겠지만 원하던 출력문이 안나와서 다 삭제함
 
 **실수 및 개선 사항:**  
 - 스캐너 `.close()` 구조 확실히 알고 쓰기
-  
+- 리턴값이 있는 메소드에 `if`문을 사용할 경우 각 `if,` `else if`, `else`마다 `return`값을 넣어야하는걸 까먹고 있었음
+
+**새롭게 배운 점:** 
+- 문자열 반복 `repeat()`
+- 래퍼 클래스개념
+
 ---
 
 # 🎯 추가 개선 예정(자바 외 내 전체적인 개발자 목표)
@@ -209,7 +215,8 @@
 - **변수명 짓기:** [Wordic](https://wordic.loeaf.com/variable-name)  
 - **어려운 개념 정리:** [ChatGPT](https://chatgpt.com)  
 - **코딩 테스트:** 백준(알고리즘), 프로그래머스(코딩테스트), SWEA(삼성 알고리즘 문제), 코드업(백준보다 난이도 낮음), 바킹독(다양한 알고리즘 자료 제공)
+- **노션** https://www.notion.com/ko
 - **기술블로그:** 기술블로그(https://ccomccomhan.tistory.com/35) 
 - **유튜브:** 코딩애플(cs 정보, 응용), 노말틱(정보보안), 나도코딩(혼자 공부용)
--  http://w3schools.com/
-
+- **뭐더라 html할 때 했는데** http://w3schools.com/
+- **오버로딩과 오버라이딩 개념** https://f-lab.kr/insight/understanding-overloading-and-overriding-in-java-20240708?gad_source=1&gclid=EAIaIQobChMIivKI5u_giwMVpwt7Bx0bBw78EAAYASAAEgKzdPD_BwE 
