@@ -12,6 +12,7 @@ import java.util.Scanner;
 // 매개변수를 사용하지 않고 같은 동작을 구현하려면, 메소드 내에서 데이터를 직접 생성하거나 전역 변수를 사용해야 합니다.
 // 공부할 거 동적배열, dto ? 개념, 컨트롤파트 예시문제들
 // sc.close 안해서 거슬리던 경고창 뜬거였음
+// sc.close()도 남발하니까 오류 뜸 일단 기존 sc.close 종료 기능쪽 제외하고 다 주석처리
 
 // 회원가입 클래스
 class MemberJoin1 { //얘 자주쓸꺼임 2차원 배열로 바꿔 원래 저장하던 id,pw 변수들 삭제함 이제부터 입력받고 바로 저장할 수 있음
@@ -38,7 +39,7 @@ class MemberJoin1 { //얘 자주쓸꺼임 2차원 배열로 바꿔 원래 저장
                 break;
             }
         }
-        sc.close();
+//        sc.close();
     } //end public void join 메소드
 } //end class memberjoin1
 
@@ -87,7 +88,7 @@ class Deposit1 {
                 break;
             }
         }
-        sc.close();
+//        sc.close();
     } //end 메소드
 } //end class
 
@@ -110,7 +111,7 @@ class Withdraw1 {
                 break;
             }
         }
-        sc.close();
+//        sc.close();
     } //end 메소드
 } //end class
 
@@ -132,7 +133,7 @@ class AccountDelete1 {
                 break;
             }
         }
-        sc.close();
+//        sc.close();
     } //end 메소드
 } //end class
 
