@@ -228,6 +228,21 @@
 > 클래스는 설계도
 > 인스턴스는 실제로 만들어진 객체
 - 스택과 힙의 차이점
+
+## 2025-02-28 
+- 생성자와 기본생성자 개념
+- 생성자와 기본 생성자 ex문제
+- `this.`
+- -`super()`
+- 예외처리(`try catch`)
+
+**새롭게 배운 점:** 
+- 예외처리(`try catch`) 일부분
+- `this` 개념
+- `super`개념
+
+- 공부 집가서 ㄷㅓ 해야겠다 일단 oop 부분이 어느정도 개념이 잡히고 문제들도 어느정도 풀 수 있으면 그때 모든 프로젝트 업그레이드 진행 예정
+  
 ---
 
 # 🎯 추가 개선 예정(자바 외 내 전체적인 개발자 목표)
@@ -247,3 +262,6 @@
 - **유튜브:** 코딩애플(cs 정보, cs지식 응용, 재밌음), 노말틱(정보보안, 이 유튜버도 재밌음), 나도코딩(혼자 공부용)
 - **뭐더라 html할 때 했는데** http://w3schools.com/
 - **오버로딩과 오버라이딩 개념** https://f-lab.kr/insight/understanding-overloading-and-overriding-in-java-20240708?gad_source=1&gclid=EAIaIQobChMIivKI5u_giwMVpwt7Bx0bBw78EAAYASAAEgKzdPD_BwE 
+- **자바 메모리 구조** https://inpa.tistory.com/entry/JAVA-%E2%98%95-%EA%B7%B8%EB%A6%BC%EC%9C%BC%EB%A1%9C-%EB%B3%B4%EB%8A%94-%EC%9E%90%EB%B0%94-%EC%BD%94%EB%93%9C%EC%9D%98-%EB%A9%94%EB%AA%A8%EB%A6%AC-%EC%98%81%EC%97%AD%EC%8A%A4%ED%83%9D-%ED%9E%99
+- https://pgnv.tistory.com/66이게 더 쉽게 설명
+- **자바 예외처리** https://cheershennah.tistory.com/144
