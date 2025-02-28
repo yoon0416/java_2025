@@ -235,6 +235,7 @@
 - `this.`
 - -`super()`
 - 예외처리(`try catch`)
+- static
 
 **새롭게 배운 점:** 
 - 예외처리(`try catch`) 일부분
