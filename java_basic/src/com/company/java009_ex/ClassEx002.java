@@ -23,7 +23,7 @@ class MyPrice001{
 public class ClassEx002 {
 
 	public static void main(String[] args) {
-		MyPrice001   p1 = new MyPrice001();
+		MyPrice001   p1 = new MyPrice001(); //객체생성 > 객체 = p1
         p1.input();
         p1.show();
 
