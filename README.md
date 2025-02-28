@@ -263,4 +263,5 @@
 - **뭐더라 html할 때 했는데** http://w3schools.com/
 - **오버로딩과 오버라이딩 개념** https://f-lab.kr/insight/understanding-overloading-and-overriding-in-java-20240708?gad_source=1&gclid=EAIaIQobChMIivKI5u_giwMVpwt7Bx0bBw78EAAYASAAEgKzdPD_BwE 
 - **자바 메모리 구조** https://inpa.tistory.com/entry/JAVA-%E2%98%95-%EA%B7%B8%EB%A6%BC%EC%9C%BC%EB%A1%9C-%EB%B3%B4%EB%8A%94-%EC%9E%90%EB%B0%94-%EC%BD%94%EB%93%9C%EC%9D%98-%EB%A9%94%EB%AA%A8%EB%A6%AC-%EC%98%81%EC%97%AD%EC%8A%A4%ED%83%9D-%ED%9E%99
+- https://pgnv.tistory.com/66이게 더 쉽게 설명
 - **자바 예외처리** https://cheershennah.tistory.com/144
