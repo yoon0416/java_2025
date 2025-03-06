@@ -8,4 +8,4 @@
    - `abstract class Animal{ abstract void sound(); }` >  abstract 메서드는 구현부 없음
    - `abstract class Animal{ String name; abstract void sound(); }` > 인스턴스변수 - this
    - `Animal ani = new Animal();` > new 사용불가 , 구현부가 없는 미완성이기 때문에
-   - `class Cat extends Animal{ @Override void sound(){ 구현내용 } }` > 자식클래스를 이용하여 구현해야함 
+   - `class Cat extends Animal{ @Override void sound(){ 구현부 } }` > 자식클래스를 이용하여 구현해야함 
