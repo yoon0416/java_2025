@@ -303,3 +303,4 @@
 - https://pgnv.tistory.com/66이게 더 쉽게 설명
 - **자바 예외처리** https://cheershennah.tistory.com/144
 - **자바 메모리구조 2** https://youtu.be/QPulWilGBpk?si=lODi2y6oaGo8Y0wz
+- https://inpa.tistory.com/ 이사람 설명 완전 굿굿
