@@ -29,6 +29,7 @@
   - Order 클래스를 만들어 주문 내역 저장 (List<Food>)
   -  Delivery 인터페이스를 만들어 배달과 포장 기능 구현
 
+### 5. 자바만 사용하여 gui 앱 만들어야겠음 (db사용하는 프로젝트로)
 
 ---
 
@@ -114,6 +115,6 @@
 - **자바 개념 정리**: [Inpa 기술블로그](https://inpa.tistory.com/)
 - **코딩 테스트 준비**: 백준, 프로그래머스, SWEA, 코드업
 - **API 문서 참고**: [카카오 API](https://developers.kakao.com/)
-
+- **잘 정리된 자바 프로젝트** https://github.com/JMsuper/java-bondtypestock-investment-strategy?tab=readme-ov-file , https://github.com/jihokim94/starbucks
 ---
 
