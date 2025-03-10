@@ -7,19 +7,30 @@
 		<item key="WizardProjectsImportPage.STORE_CLOSE_CREATED_PROJECTS_ID" value="false"/>
 		<item key="WizardProjectsImportPage.STORE_HIDE_CONFLICTING_PROJECTS_ID" value="false"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+<<<<<<< HEAD
+			<item value="C:\Users\USER\OneDrive\바탕 화면\java.git"/>
+=======
 			<item value="D:\Java_2025\java_basic"/>
+>>>>>>> 8c5a28037823113c5283b706c383f9af3ef9c917
 		</list>
 		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
 			<item value=""/>
 		</list>
 		<section name="ExternalProjectImportWizard.dialogBounds">
+<<<<<<< HEAD
+			<item key="DIALOG_X_ORIGIN" value="250"/>
+			<item key="DIALOG_Y_ORIGIN" value="47"/>
+=======
 			<item key="DIALOG_X_ORIGIN" value="325"/>
 			<item key="DIALOG_Y_ORIGIN" value="53"/>
+>>>>>>> 8c5a28037823113c5283b706c383f9af3ef9c917
 			<item key="DIALOG_WIDTH" value="525"/>
 			<item key="DIALOG_HEIGHT" value="710"/>
 			<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕"/>
 		</section>
 	</section>
+<<<<<<< HEAD
+=======
 	<section name="ChooseWorkspaceDialogSettings">
 		<item key="DIALOG_X_ORIGIN" value="670"/>
 		<item key="DIALOG_Y_ORIGIN" value="341"/>
@@ -28,4 +39,5 @@
 		<list key="ENABLED_TRANSFERS">
 		</list>
 	</section>
+>>>>>>> 8c5a28037823113c5283b706c383f9af3ef9c917
 </section>
