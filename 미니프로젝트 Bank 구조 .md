@@ -112,7 +112,7 @@
 ---
 ---
 1. package UserInfo<br></br>
-   └─ UserInfo (유저 데이터)
+   └─ UserInfo (유저 데이터)<br></br>
        ├─ id, pw, age, money (프라이빗)<br></br>
        ├─ getter, setter<br></br>
        └─ 생성자 (id, pw, age, money)<br></br>
