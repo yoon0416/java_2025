@@ -111,31 +111,32 @@
 
 ---
 ---
-1. `package UserInfo`
-   └─ `UserInfo` (유저 데이터)
-       ├─ `id`, `pw`, `age`, `money` (프라이빗)
+1. package UserInfo
+   └─ UserInfo (유저 데이터)
+       ├─ id, pw, age, money (프라이빗)
        ├─ getter, setter
        └─ 생성자 (id, pw, age, money)
 
-2. `package login`
-   ├─ `Login` (인터페이스)
-   └─ `LoginLogic` (로그인 로직 클래스)
+2. package login
+   ├─ Login (인터페이스)
+   └─ LoginLogic (로그인 로직 클래스)
 
-3. `package input`
-   ├─ `InputControl` (인터페이스)
-   └─ `UserInput` (사용자 입력 처리 클래스)
+3. package input
+   ├─ InputControl (인터페이스)
+   └─ UserInput (사용자 입력 처리 클래스)
 
-4. `package account`
-   ├─ `AccountView` (계좌 조회 인터페이스)
-   ├─ `AccountViewLogic` (계좌 조회 구현)
-   ├─ `Deposit` (계좌 입금 클래스)
-   ├─ `Withdraw` (계좌 출금 클래스)
-   └─ `AccountDelete` (계좌 삭제 클래스)
+4. package account
+   ├─ AccountView (계좌 조회 인터페이스)
+   ├─ AccountViewLogic (계좌 조회 구현)
+   ├─ Deposit (계좌 입금 클래스)
+   ├─ Withdraw (계좌 출금 클래스)
+   └─ AccountDelete (계좌 삭제 클래스)
 
-5. `package main`
-   ├─ `BankApp` (메인 클래스)
-       ├─ `while(true)` 반복문
-       └─ `switch` (사용자 입력에 따라 기능 실행)
+5. package main
+   ├─ BankApp (메인 클래스)
+   ├─ while(true) 반복문
+   └─ switch (사용자 입력에 따라 기능 실행)
+
 
 
 
