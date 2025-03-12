@@ -2,7 +2,8 @@
 
 ## 📌 **마지막 업데이트 : 25.03.12**
 ---
-https://www.youtube.com/watch?v=3mcZiNizd04
+[Bank v7.0 유튜브](https://www.youtube.com/watch?v=3mcZiNizd04)
+
 ---
 
 ## 🔹 **버전별 업데이트 내역**
