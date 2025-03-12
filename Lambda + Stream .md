@@ -11,3 +11,6 @@
    - Predicate - 판단용도 - test
    - Function - 처리용도 - apply
    - Operator - 연산용도 - aplly
+
+3. Stream
+   - 데이터종류에 상관없이(Stream) 같은 방식으로 처리(lambda)
