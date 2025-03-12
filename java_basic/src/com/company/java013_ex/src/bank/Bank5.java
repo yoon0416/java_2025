@@ -1,6 +1,5 @@
 //package bank;
-//2025-03-12 10:18 파일이 삭제되어 깃헙에서 가져옴
-
+//
 //import java.util.Scanner;
 // //회원가입 기능만 클래스 따로 만들어둠
 //class MemberJoin {
