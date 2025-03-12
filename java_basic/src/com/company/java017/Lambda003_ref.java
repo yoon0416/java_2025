@@ -52,7 +52,9 @@ public class Lambda003_ref {
 		InterEx2 ex22 = System.out::println;
 		ex22.method(100);
 		
+		// 앞에는 클래스명 또는 객체명 :: 뒤에는 메서드명 또는 new (생성자)
 		
+
 	}//end psvm
 
 }//end class
