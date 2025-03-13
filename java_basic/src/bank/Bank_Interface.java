@@ -53,6 +53,7 @@ class Input implements Bank_Controller {
 	public void exec(Bank_v7[] users) {
 		//변수
 		Scanner sc = new Scanner(System.in);
+		
 		int find=-1; 
 		//처리1
 		for (int i = 0; i < users.length; i++) { if (users[i] == null) { find=i; break; } }
@@ -168,6 +169,7 @@ class Delete implements Bank_Controller {
 
 			return;
 		}
+		
 	}
 } // end class
 
@@ -176,29 +178,48 @@ class Menu7 {
 	private Bank_v7[] users;
 	// private ArrayList<Bank_v7>users;
 	private Bank_Controller[] process;
-
+	
 	public Menu7() {
 		users = new Bank_v7[3]; 
 		process = new Bank_Controller[] { new Input(), new Show(), new Deposit(), new Withdraw(), new Delete() };
+
 	}
 
 	public void exec() {
 		Scanner sc = new Scanner(System.in);
 		while (true) {
-			System.out.println(Arrays.toString(users));
-			System.out.println("\n" + Bank_v7.company);
-			System.out.println("===== 메뉴 =====");
-			System.out.println("* 1.추가\n* 2.조회\n* 3.입금\n* 4.출금\n* 5.삭제\n* 9.종료\n입력>>>");
-			int choice = sc.nextInt();
+			try {
+				System.out.println(Arrays.toString(users));
+				System.out.println("\n" + Bank_v7.company);
+				System.out.println("===== 메뉴 =====");
+				System.out.println("* 1.추가\n* 2.조회\n* 3.입금\n* 4.출금\n* 5.삭제\n* 9.종료\n입력>>>");
 
-			if (choice == 9) { System.out.println("프로그램을 종료합니다."); break; }
-			
-			if (choice >= 1 && choice <= 5) {
-				process[choice - 1].exec(users);
-			} else { System.out.println("잘못된 입력입니다."); }
+				if (!sc.hasNextInt()) { //  입력값이 숫자가 아니면
+					System.out.println("잘못된 입력입니다. 숫자를 입력하세요.");
+					sc.next(); // 잘못된 입력값을 소비하고 다시 반복문 실행
+					continue;
+				}
+
+				int choice = sc.nextInt();
+
+				if (choice == 9) {
+					System.out.println("프로그램을 종료합니다.");
+					sc.close();
+					return;
+				}
+
+				if (choice >= 1 && choice <= 5) {
+					process[choice - 1].exec(users);
+				} else {
+					System.out.println("잘못된 입력입니다. 다시 입력하세요.");
+				}
+			} catch (Exception e) { // 예외 발생 시
+				System.out.println("오류가 발생했습니다. 다시 입력하세요.");
+				sc.nextLine(); // 입력 버퍼 비우기
+			}
 		}
 	}
-} // end class
+}// end class
 
 public class Bank_Interface {
 	public static void main(String[] args) {
