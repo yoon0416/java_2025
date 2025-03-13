@@ -147,8 +147,13 @@ class Delete implements Bank_Controller {
             System.out.println("계좌를 삭제하시겠습니까? (Y/N)");
             String confirm = sc.next();
             if (confirm.equalsIgnoreCase("Y")) {
-                users.remove(find); 						//원래는 null값이나 0을 줬지만 remove()로 교체 
-                System.out.println("계좌 삭제 완료.");
+            	Bank_v7 user = users.get(find);
+            	user.setId(null);
+            	user.setPass(null);
+            	user.setBalance(0);
+            	users.remove(find);
+            	System.out.println("계좌 삭제 완료.");
+
             } else {
                 System.out.println("계좌 삭제가 취소되었습니다.");
             }
