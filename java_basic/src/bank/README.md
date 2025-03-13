@@ -4,6 +4,9 @@
 ---
 [Bank v7.0 결과물 유튜브 링크](https://www.youtube.com/watch?v=3mcZiNizd04)
 
+[![Python Tutorial](https://img.youtube.com/vi/dQw4w9WgXcQ/0.jpg)](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
+
+
 ---
 
 ## 🔹 **버전별 업데이트 내역**
