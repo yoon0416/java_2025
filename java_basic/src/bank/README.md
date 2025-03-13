@@ -1,8 +1,11 @@
 # Bank 프로젝트 업데이트 내역
 
-## 📌 **마지막 업데이트 : 25.03.12**
+## 📌 **마지막 업데이트 : 25.03.13**
 ---
 [Bank v7.0 결과물 유튜브 링크](https://www.youtube.com/watch?v=3mcZiNizd04)
+
+[![Python Tutorial](https://img.youtube.com/vi/3mcZiNizd04/0.jpg)](https://www.youtube.com/watch?v=3mcZiNizd04)
+
 
 ---
 
@@ -52,7 +55,9 @@
 
 ### Bank v7.2 (최신 업데이트)  
 - 기존 Bank v7.0에 있던 **로그인 로직을 재구현**  
-
+- 프로그램 종료 시 `return;`을 사용하여 프로그램 종료 시키는 형식으로 수정 & `sc.close()`
+- menu7에서 만약 사용자가 메뉴를 고를 때 숫자가 아닌 다른 값을 입력할 경우 대비하여 예외처리 추가
+   
 ---
 
 ## 🔍 **트러블슈팅 (Troubleshooting)**
