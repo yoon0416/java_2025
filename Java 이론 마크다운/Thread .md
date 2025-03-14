@@ -15,4 +15,4 @@
   
 5. 작업스레드 생성방법
    - 1) Thread 상속
-     2) Runnable 인터페이슥 ㅜ현
+     2) Runnable 인터페이슥 구현
