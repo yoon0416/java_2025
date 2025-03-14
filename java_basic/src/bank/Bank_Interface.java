@@ -149,6 +149,7 @@ class Withdraw implements Bank_Controller {
 }//end class
 
 
+
 // Delete 클래스: 계좌 삭제 (remove() 사용)
 class Delete implements Bank_Controller {
     @Override
@@ -180,6 +181,68 @@ class Delete implements Bank_Controller {
     }
 }//end class
 
+//송금 기능 추가
+class Transfer implements Bank_Controller {
+ @Override
+ public void exec(ArrayList<Bank_v7> users) {
+     Scanner sc = new Scanner(System.in);
+     System.out.println("송금할 아이디 입력 : ");
+     String senderId = sc.next();
+     
+     Bank_v7 sender = findUser(users, senderId);
+     if (sender == null) {
+         System.out.println("송금할 계좌가 존재하지 않습니다.");
+         return;
+     }
+     
+     System.out.println("받는 사람 아이디 입력 : ");
+     String receiverId = sc.next();
+     
+     if (senderId.equals(receiverId)) {
+         System.out.println("본인에게 송금할 수 없습니다.");
+         return;
+     }
+     
+     Bank_v7 receiver = findUser(users, receiverId);
+     if (receiver == null) {
+         System.out.println("받는 사람의 계좌가 존재하지 않습니다.");
+         return;
+     }
+     
+     System.out.println("송금할 금액 입력 : ");
+     if (!sc.hasNextInt()) {
+         System.out.println("잘못된 입력입니다. 숫자를 입력하세요.");
+         sc.next();
+         return;
+     }
+     int amount = sc.nextInt();
+     
+     if (amount <= 0) {
+         System.out.println("송금 금액은 0보다 커야 합니다.");
+         return;
+     }
+     
+     if (sender.getBalance() < amount) {
+         System.out.println("잔액이 부족합니다.");
+         return;
+     }
+     
+     sender.setBalance(sender.getBalance() - amount);
+     receiver.setBalance(receiver.getBalance() + amount);
+     System.out.println("송금 완료! 현재 잔액: " + sender.getBalance());
+ }
+ 
+ private Bank_v7 findUser(ArrayList<Bank_v7> users, String id) {
+     for (Bank_v7 user : users) {
+         if (user.getId().equals(id)) {
+             return user;
+         }
+     }
+     return null;
+ }
+}
+
+
 // Menu7 클래스: 메뉴 출력 및 기능 실행 (동적 배열 적용)
 class Menu7 {
     private ArrayList<Bank_v7> users; // 기존 배열에서 ArrayList로 변경
@@ -187,7 +250,7 @@ class Menu7 {
 
     public Menu7() {
         users = new ArrayList<>(); // 동적 배열로 변경
-        process = new Bank_Controller[] { new Input(), new Show(), new Deposit(), new Withdraw(), new Delete() };
+        process = new Bank_Controller[] { new Input(), new Show(), new Deposit(), new Withdraw(), new Delete(), new Transfer()};
     }
 
     public void exec() {
@@ -197,7 +260,7 @@ class Menu7 {
                 System.out.println(users.toString()); // ArrayList 출력
                 System.out.println("\n" + Bank_v7.company);
                 System.out.println("======BANK======");
-                System.out.println("* 1.추가\n* 2.조회\n* 3.입금\n* 4.출금\n* 5.삭제\n* 9.종료\n입력>>>");
+                System.out.println("* 1.추가\n* 2.조회\n* 3.입금\n* 4.출금\n* 5.삭제\n* 6.송금\n* 9.종료\n입력>>>");
 
                 if (!sc.hasNextInt()) { 
                     System.out.println("잘못된 입력입니다. 숫자를 입력하세요.");
@@ -213,7 +276,7 @@ class Menu7 {
                     return;
                 }
 
-                if (choice >= 1 && choice <= 5) {
+                if (choice >= 1 && choice <= 6) {
                     process[choice - 1].exec(users); // ArrayList를 인자로 전달
                 } else {
                     System.out.println("잘못된 입력입니다. 다시 입력하세요.");
