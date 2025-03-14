@@ -1,12 +1,3 @@
-// map을 사용하려다가 map이 아직 익숙하지 않고 헷갈려서 list사용 if문으로 중복값 없애는 방향으로 수정할 예정
-// db 넘어가기전 list를 map으로 넘어가야하는 이유 = 중복값 없애기, 데이터가 많아지면 list 속도 ↓
-
-/*
- interface Bank_Controller {
-    void exec(ArrayList<Bank_v7> users)  throws   IOException;; // 기존 배열에서 ArrayList로 변경
-}//end 인터페이스
- */
-
 package bank;
 
 import java.util.ArrayList;
@@ -168,7 +159,7 @@ class Delete implements Bank_Controller {
             	user.setBalance(0);
             	users.remove(find);
             	System.out.println("계좌 삭제 완료.");
-
+            	break;
             } 
             else if(confirm.equalsIgnoreCase("N")){ //equalsIgnoreCase: 대소문자 구분없음
                 System.out.println("계좌 삭제가 취소되었습니다.");
@@ -188,7 +179,7 @@ class Transfer implements Bank_Controller {
      Scanner sc = new Scanner(System.in);
      System.out.println("송금할 아이디 입력 : ");
      String senderId = sc.next();
-     
+     //송금 id의 비번 입력받고 맞다면 송금 ㄱ?추가
      Bank_v7 sender = findUser(users, senderId);
      if (sender == null) {
          System.out.println("송금할 계좌가 존재하지 않습니다.");
@@ -297,5 +288,4 @@ public class Bank_Interface {
         Menu7 menu = new Menu7();
         menu.exec();
     }
-}//end class
-
+}//end class 
