@@ -47,6 +47,13 @@ class Input implements Bank_Controller {
 
         System.out.println("아이디 입력 : ");
         String id = sc.next();
+        for (Bank_v7 user : users) {					//향상된 포문 돌려서 만약 입력값이 기존 아디랑 같으면 더이상 입력안받고 나가게
+        	if(id.equals(user.getId())){
+        		System.out.println("중복된 아이디입니다.");
+        		return;
+        	}
+        }
+
         System.out.println("비밀번호 입력 : ");
         String pass = sc.next();
         System.out.println("잔액 입력 : ");
