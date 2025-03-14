@@ -1,10 +1,16 @@
 // map을 사용하려다가 map이 아직 익숙하지 않고 헷갈려서 list사용 if문으로 중복값 없애는 방향으로 수정할 예정
 // db 넘어가기전 list를 map으로 넘어가야하는 이유 = 중복값 없애기, 데이터가 많아지면 list 속도 ↓
-// 일단 중복아이디 없애는 기능이나 만들어야하는데 아ㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏ귀찮다
+
+/*
+ interface Bank_Controller {
+    void exec(ArrayList<Bank_v7> users)  throws   IOException;; // 기존 배열에서 ArrayList로 변경
+}//end 인터페이스
+ */
 
 package bank;
 
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 // Bank_v7 클래스: 사용자 정보를 저장하는 모델 클래스
@@ -31,7 +37,7 @@ class Bank_v7 { // dto
 
 // Bank_Controller 인터페이스: 모든 기능 클래스들이 이 인터페이스를 구현 (변경 없음)
 interface Bank_Controller {
-    void exec(ArrayList<Bank_v7> users); // 기존 배열에서 ArrayList로 변경
+    void exec (ArrayList<Bank_v7> users) throws InputMismatchException ; //IOException이거 말고 이거씀 입력값이 불일치할 때 나타나는
 }//end 인터페이스
 
 
@@ -45,6 +51,7 @@ class Input implements Bank_Controller {
     public void exec(ArrayList<Bank_v7> users) {
         Scanner sc = new Scanner(System.in);
 
+        
         System.out.println("아이디 입력 : ");
         String id = sc.next();
         for (Bank_v7 user : users) {					//향상된 포문 돌려서 만약 입력값이 기존 아디랑 같으면 더이상 입력안받고 나가게
@@ -53,7 +60,6 @@ class Input implements Bank_Controller {
         		return;
         	}
         }
-
         System.out.println("비밀번호 입력 : ");
         String pass = sc.next();
         System.out.println("잔액 입력 : ");
@@ -151,6 +157,7 @@ class Delete implements Bank_Controller {
         int find = new UserCheck().check(users);
 
         if (find != -1) {
+        	while(true) { //else하나때매 추가
             System.out.println("계좌를 삭제하시겠습니까? (Y/N)");
             String confirm = sc.next();
             if (confirm.equalsIgnoreCase("Y")) {
@@ -161,10 +168,15 @@ class Delete implements Bank_Controller {
             	users.remove(find);
             	System.out.println("계좌 삭제 완료.");
 
-            } else {
+            } 
+            else if(confirm.equalsIgnoreCase("N")){ //equalsIgnoreCase: 대소문자 구분없음
                 System.out.println("계좌 삭제가 취소되었습니다.");
             }
-        }
+            else {
+            	System.out.println("Y 혹은 N을 입력하세요");
+            }
+            }//end while
+        }//end if
     }
 }//end class
 
@@ -208,7 +220,8 @@ class Menu7 {
                 }
             } catch (Exception e) { 
                 System.out.println("오류가 발생했습니다. 다시 입력하세요.");
-                sc.next();
+                continue;
+                // 여기다가 에러 로그 사용하면 될 듯?
             }
         }
     }
