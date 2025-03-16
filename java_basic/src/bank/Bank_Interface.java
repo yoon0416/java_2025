@@ -172,57 +172,59 @@ class Delete implements Bank_Controller {
     }
 }//end class
 
+
 //송금 기능 추가
-class Transfer implements Bank_Controller {
+class Transfer implements Bank_Controller { 
  @Override
  public void exec(ArrayList<Bank_v7> users) {
      Scanner sc = new Scanner(System.in);
-     System.out.println("송금할 아이디 입력 : ");
-     String senderId = sc.next();
-     //송금 id의 비번 입력받고 맞다면 송금 ㄱ?추가
-     Bank_v7 sender = findUser(users, senderId);
-     if (sender == null) {
-         System.out.println("송금할 계좌가 존재하지 않습니다.");
-         return;
+
+     // 로그인 시도 추가함
+     int find = new UserCheck().check(users);
+     if (find == -1) {
+         return; // 로그인 실패 시 종료
      }
      
+     // 송금할 금액 입력 받기
+     System.out.println("송금할 금액 입력 : ");
+     if (!sc.hasNextInt()) {
+         System.out.println("잘못된 입력입니다. 숫자를 입력하세요.");
+         sc.next(); // 잘못된 입력 처리
+         return;
+     }
+     int amount = sc.nextInt();
+     
+     // 송금할 금액이 0보다 큰지 확인
+     if (amount <= 0) {
+         System.out.println("송금 금액은 0보다 커야 합니다.");
+         return;
+     }
+
+     // 송금할 사용자 (로그인한 사용자) 확인
+     Bank_v7 sender = users.get(find);
+     if (sender.getBalance() < amount) {
+         System.out.println("잔액이 부족합니다.");
+         return;
+     }
+
+     // 받는 사람 아이디 입력 받기
      System.out.println("받는 사람 아이디 입력 : ");
      String receiverId = sc.next();
-     
-     if (senderId.equals(receiverId)) {
-         System.out.println("본인에게 송금할 수 없습니다.");
-         return;
-     }
-     
+
+     // 받는 사용자 확인
      Bank_v7 receiver = findUser(users, receiverId);
      if (receiver == null) {
          System.out.println("받는 사람의 계좌가 존재하지 않습니다.");
          return;
      }
-     
-     System.out.println("송금할 금액 입력 : ");
-     if (!sc.hasNextInt()) {
-         System.out.println("잘못된 입력입니다. 숫자를 입력하세요.");
-         sc.next();
-         return;
-     }
-     int amount = sc.nextInt();
-     
-     if (amount <= 0) {
-         System.out.println("송금 금액은 0보다 커야 합니다.");
-         return;
-     }
-     
-     if (sender.getBalance() < amount) {
-         System.out.println("잔액이 부족합니다.");
-         return;
-     }
-     
+
+     // 송금 처리
      sender.setBalance(sender.getBalance() - amount);
      receiver.setBalance(receiver.getBalance() + amount);
      System.out.println("송금 완료! 현재 잔액: " + sender.getBalance());
  }
- 
+
+ // 사용자 찾기 메서드
  private Bank_v7 findUser(ArrayList<Bank_v7> users, String id) {
      for (Bank_v7 user : users) {
          if (user.getId().equals(id)) {
@@ -231,7 +233,8 @@ class Transfer implements Bank_Controller {
      }
      return null;
  }
-}
+}//end class
+
 
 
 // Menu7 클래스: 메뉴 출력 및 기능 실행 (동적 배열 적용)
