@@ -58,7 +58,23 @@
    2. 후보키 - 기본키로 사용할 수 있는 속성            no, email
    3. 기본키 - 후보키들 중에서 선택한 주키(main key)   no
    4. 대체키 - 후보키들 중에서 선택 안된 키            email
+   5. 외래키 - 테이블과 테이블을 연결해주는 속성
 
+4. alter
+   - 데이터 정의: create, alter, drop
+   - 문법 : alter table 테이블명 (add, drop, change, modify)
+     - add : 추가 / 필드명 자료형 속성
+     - drop : 삭제 / 필드명
+     - modify : 필드 수정 / 수정할 필드명 자료형 속성
+     - change : 필드 수정 / 수정할 필드명 새로넣을필드명 자료형속성
+     - rename 새로운 테이블명
+     > ALTER TABLE userinfo ADD email VARCHAR(50);
+     > alter table userinfo modify email varchar(100) not null; 이메일필드 수정 자료형
+     > alter table userinfo change email uemail varchar(100) not null; 이메일 이름
+     > alter table userinfo drop uemail; 이메일 삭제
+     > 
+
+      
 ---
     no  name  age   email
     2, second, 10     second22@gmail.com 
