@@ -38,6 +38,8 @@
       > create database db명;<br></br>
       > show databases;<br></br>
       > drop database db명;
+      > show tables; (테이블 보기)
+      >  desc 테이블명 (구조확인)
    3. TABLE
       - 저장소 안에 분류표
         > create table 테이블명( 필드1 자료형 속성, 필드2 자료형 속성 );
