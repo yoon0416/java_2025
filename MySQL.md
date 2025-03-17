@@ -23,17 +23,32 @@
       - 관계형 데이터베이스 관리 시스템
       - 테이블 관계
    2. RDBMS 구성요소
-      - 개체 ( Entity : Table )
-      - 관계 ( Relational : 외래키 )
-      - 속성 ( Attribute : 필드 )
+      - **개체** ( Entity : Table )
+      - **관계** ( Relational : 외래키 )
+      - **속성** ( Attribute : 필드 )
      
 3. 데이터베이스언어
-   - 정의어(DDL) - create, alter, drop - CAD
-   - 조작어(DML) - insert, select, update, dedlete - CRUD
-   - 제어어(DCL) - grant, revoke
+   - **정의어(DDL)** - create, alter, drop - CAD
+   - **조작어(DML)** - insert, select, update, dedlete - CRUD
+   - **제어어(DCL)** - grant, revoke
         
 4. 실습
    1. Database 만들기
+      > create database db명;
+      > show databases;
+      > drop database db명;
+   2. TABLE
+      - 저장소 안에 분류표
+        > create table 테이블명( 필드1 자료형 속성, 필드2 자료형 속성 );
+        > create table t1(name varchar(100), not null, age int );
+      - 자료형
+        1. **숫자** : `int`, `double`
+        2. **문자** : `char` 고정문자열-y/n / `varchar` 가변형문자열 / `text`
+        3. **날짜** : `date`, `datetime`, `timestamp`
+      - 속성
+        - **필수입력** : not null (아니오, 값없음) - 공간은 채우지만 빈칸허용 x
+        - **숫자자동증가** : auto_increment(오라클에서 없음)
+        - **기본키** : primary key
 
 
 
