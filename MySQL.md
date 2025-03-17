@@ -37,8 +37,8 @@
       > da선택확인 (use db명;)<br></br>
       > create database db명;<br></br>
       > show databases;<br></br>
-      > drop database db명;
-      > show tables; (테이블 보기)
+      > drop database db명;<br></br>
+      > show tables; (테이블 보기)<br></br>
       >  desc 테이블명 (구조확인)
    3. TABLE
       - 저장소 안에 분류표
