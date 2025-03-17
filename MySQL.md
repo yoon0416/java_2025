@@ -34,9 +34,9 @@
         
 4. 실습
    1. Database 만들기
-      > da선택확인 (use db명;)
-      > create database db명;
-      > show databases;
+      > da선택확인 (use db명;)<br></br>
+      > create database db명;<br></br>
+      > show databases;<br></br>
       > drop database db명;
    3. TABLE
       - 저장소 안에 분류표
