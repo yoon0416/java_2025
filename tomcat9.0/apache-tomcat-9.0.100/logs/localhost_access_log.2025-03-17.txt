@@ -58,3 +58,12 @@
 0:0:0:0:0:0:0:1 - - [17/Mar/2025:16:42:55 +0900] "GET /jsp_basic/jsp002_jsp.jsp HTTP/1.1" 200 446
 0:0:0:0:0:0:0:1 - - [17/Mar/2025:16:42:57 +0900] "GET /jsp_basic/jsp002_jsp.jsp HTTP/1.1" 200 446
 0:0:0:0:0:0:0:1 - - [17/Mar/2025:16:42:58 +0900] "GET /jsp_basic/jsp002_jsp.jsp HTTP/1.1" 200 446
+127.0.0.1 - - [17/Mar/2025:17:09:14 +0900] "GET / HTTP/1.1" 200 11430
+0:0:0:0:0:0:0:1 - - [17/Mar/2025:17:09:15 +0900] "GET /jsp_basic/jsp004_request.jsp HTTP/1.1" 200 760
+0:0:0:0:0:0:0:1 - - [17/Mar/2025:17:09:55 +0900] "GET /action_page.php?email=abc%40gmail.com HTTP/1.1" 404 823
+0:0:0:0:0:0:0:1 - - [17/Mar/2025:17:13:03 +0900] "GET /jsp_basic/jsp004_request.jsp HTTP/1.1" 200 1117
+0:0:0:0:0:0:0:1 - - [17/Mar/2025:17:15:30 +0900] "GET /jsp_basic/jsp005_REQUEST.jsp HTTP/1.1" 200 1042
+0:0:0:0:0:0:0:1 - - [17/Mar/2025:17:15:42 +0900] "GET /jsp_basic/jsp005_REQUEST.jsp HTTP/1.1" 200 1042
+0:0:0:0:0:0:0:1 - - [17/Mar/2025:17:16:20 +0900] "GET /jsp_basic/jsp005_REQUEST.jsp HTTP/1.1" 200 1043
+0:0:0:0:0:0:0:1 - - [17/Mar/2025:17:16:20 +0900] "GET /favicon.ico HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [17/Mar/2025:17:16:34 +0900] "GET /jsp_basic/jsp005_REQUEST.jsp HTTP/1.1" 200 1042
