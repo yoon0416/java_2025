@@ -1,0 +1,61 @@
+
+Q1.
+mysql> CREATE TABLE coffee (
+    -> con int not null primary key, auto_increment;
+    -> cname VARCHAR(50) not null,
+    -> cprice int not null
+    -> );
+
+Q2. 
+ create table mlik (
+    -> mno int not null primary key auto_increment
+    -> , mname varchar(50) not null,
+    -> mprice int not null,
+    -> mnum int not null,
+    -> mtotal int not null
+    -> );
+
+Q3.
+CREATE TABLE score (
+    -> sno INT(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    ->     sname VARCHAR(20) NOT NULL,
+    ->     sjava INT(11) NOT NULL,
+    ->     sjsp INT(11) NOT NULL,
+    ->     sspring INT(11) NOT NULL,
+    ->     sproject INT(11) NOT NULL,
+    ->     stotal INT(11),
+    ->     savg INT(11),
+    ->     semail VARCHAR(50)
+    -> );
+
+
+Q4.
+CREATE TABLE emp (
+    empno INT(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    ename VARCHAR(20),
+    job VARCHAR(20),
+    mgr INT(11),
+    hiredate DATE,
+    sal INT(11),
+    comm INT(11),
+    deptno INT(11)
+);
+
+Q.5
+mysql> create table dept(
+    -> deptno int(11) not null primary key auto_increment,
+    -> dname varchar(20) not null,
+    -> loc varchar(20) not null
+    -> );
+
+Q.6
+mysql> create table salagrade(
+    -> grade int(11) not null primary key auto_increment,
+    -> losal int(11),
+    -> hisal int(11)
+    -> );
+
+
+
+
+
