@@ -16,7 +16,23 @@
         > `mysql -uroot -p` (-u 유저 / -p 패스워드)
       - 설정확인:
         > `status`
+
+2. RDB
+   1. RDBMS
+      - Relational Database Management System
+      - 관계형 데이터베이스 관리 시스템
+      - 테이블 관계
+   2. RDBMS 구성요소
+      - 개체 ( Entity : Table )
+      - 관계 ( Relational : 외래키 )
+      - 속성 ( Attribute : 필드 )
+     
+3. 데이터베이스언어
+   - 정의어(DDL) - create, alter, drop - CAD
+   - 조작어(DML) - insert, select, update, dedlete - CRUD
+   - 제어어(DCL) - grant, revoke
         
+
 
 Q. 데이터 / 정보구분
 1-1.  데이터 - 1년동안 월간 우산 판매량을 조사 했습니다.  <br></br>
