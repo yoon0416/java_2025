@@ -73,8 +73,14 @@
      > alter table userinfo change email uemail varchar(100) not null; 이메일 이름
      > alter table userinfo drop uemail; 이메일 삭제
      > 
-
-      
+ALTER TABLE alter_coffee2 CHANGE COLUMN con cno INT NOT NULL;
+ALTER TABLE alter_coffee2 MODIFY COLUMN con INT FIRST;      
+ALTER TABLE alter_coffee2 MODIFY COLUMN con INT AFTER cprice;
+alter table alter_table2 modify con int not null primary key;
+alter table alter_coffee change cgift ccoupon int(10) not null;
+---
+help alter table
+https://dev.mysql.com/doc/refman/8.0/en/alter-table.html
 ---
     no  name  age   email
     2, second, 10     second22@gmail.com 
