@@ -27,31 +27,43 @@
       - **관계** ( Relational : 외래키 )
       - **속성** ( Attribute : 필드 )
      
-3. 데이터베이스언어
+   3. 데이터베이스언어
    - **정의어(DDL)** - create, alter, drop - CAD
    - **조작어(DML)** - insert, select, update, dedlete - CRUD
    - **제어어(DCL)** - grant, revoke
         
-4. 실습
-   1. Database 만들기
-      > da선택확인 (use db명;)<br></br>
-      > create database db명;<br></br>
-      > show databases;<br></br>
-      > drop database db명;<br></br>
-      > show tables; (테이블 보기)<br></br>
-      >  desc 테이블명 (구조확인)
-   3. TABLE
-      - 저장소 안에 분류표
-        > create table 테이블명( 필드1 자료형 속성, 필드2 자료형 속성 );
-        > create table t1(name varchar(100), not null, age int );
-      - 자료형
-        1. **숫자** : `int`, `double`
-        2. **문자** : `char` 고정문자열-y/n / `varchar` 가변형문자열 / `text`
-        3. **날짜** : `date`, `datetime`, `timestamp`
-      - 속성
-        - **필수입력** : not null (아니오, 값없음) - 공간은 채우지만 빈칸허용 x
-        - **숫자자동증가** : auto_increment(오라클에서 없음)
-        - **기본키** : primary key
+   4. 실습
+      1. Database 만들기
+         > da선택확인 (use db명;)<br></br>
+         > create database db명;<br></br>
+         > show databases;<br></br>
+         > drop database db명;<br></br>
+         > show tables; (테이블 보기)<br></br>
+         >  desc 테이블명 (구조확인)
+      3. TABLE
+         - 저장소 안에 분류표
+           > create table 테이블명( 필드1 자료형 속성, 필드2 자료형 속성 );
+           > create table t1(name varchar(100), not null, age int );
+         - 자료형
+           1. **숫자** : `int`, `double`
+           2. **문자** : `char` 고정문자열-y/n / `varchar` 가변형문자열 / `text`
+           3. **날짜** : `date`, `datetime`, `timestamp`
+         - 속성
+           - **필수입력** : not null (아니오, 값없음) - 공간은 채우지만 빈칸허용 x
+           - **숫자자동증가** : auto_increment(오라클에서 없음)
+           - **기본키** : primary key
+       
+3. key
+   1. 튜플(행,레코드,한명의정보)들을 구분할 수 있는 기준 필드(행,속성)
+   2. 후보키 - 기본키로 사용할 수 있는 속성            no, email
+   3. 기본키 - 후보키들 중에서 선택한 주키(main key)   no
+   4. 대체키 - 후보키들 중에서 선택 안된 키            email
+
+---
+    no  name  age   email
+    2, second, 10     second22@gmail.com 
+    3, second, 10     second33@gmail.com
+
 ---
 
 테이블은 행과 열로 이루어져있
