@@ -34,10 +34,11 @@
         
 4. 실습
    1. Database 만들기
+      > da선택확인 (use db명;)
       > create database db명;
       > show databases;
       > drop database db명;
-   2. TABLE
+   3. TABLE
       - 저장소 안에 분류표
         > create table 테이블명( 필드1 자료형 속성, 필드2 자료형 속성 );
         > create table t1(name varchar(100), not null, age int );
