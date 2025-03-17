@@ -12,9 +12,10 @@
       - 버전확인
       - mysql ver 8.0.41
    5. 설치확인
-      - 접속 : mysql -uroot -p
-        > (-u 유저 / -p 패스워드)
-      - 설정확인: status
+      - 접속 : 
+        > `mysql -uroot -p` (-u 유저 / -p 패스워드)
+      - 설정확인:
+        > `status`
         
 
 Q. 데이터 / 정보구분
