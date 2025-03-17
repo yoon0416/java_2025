@@ -78,6 +78,7 @@
 | **2025-03-14** | [Bank 미니 프로젝트 인터페이스버전(v7.5) 구현](https://github.com/yoon0416/java_2025/tree/main/java_basic/src/bank), Thread 개념 및 실습, Network 소켓, mysql 환경설정, [Bank 미니 프로젝트 인터페이스버전(v7.6) 구현](https://github.com/yoon0416/java_2025/tree/main/java_basic/src/bank)|
 | **2025-03-15** | [Bank 미니 프로젝트 인터페이스버전(v7.7) 구현](https://github.com/yoon0416/java_2025/tree/main/java_basic/src/bank)|
 | **2025-03-16** | 부족하다고 느낀 람다식 공부, [bank 미니 프로젝트 인터페이스버전(7.8) 구현](https://github.com/yoon0416/java_2025/tree/main/java_basic/src/bank)|
+| **2025-03-17** | Mysql, jsp|
 
 ---
 
