@@ -16,3 +16,8 @@
       > https://www.google.com/search?q=apple&name=sally
       - url 뒤에 [입력데이터]를 함께 제공하는 데이터 전달방법
       - get방식
+
+
+   - 클라이언트[#] ↔ 서버
+   4. request.getParameter("name값")
+      - 클라이언트 ↔ 서버[#]
