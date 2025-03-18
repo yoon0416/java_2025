@@ -12,6 +12,7 @@
       - action="요청처리" method="요청처리방식(get, post)"
       - name = "데이터보관이름"
 
+
    3.쿼리스트링
       > https://www.google.com/search?q=apple&name=sally
       - url 뒤에 [입력데이터]를 함께 제공하는 데이터 전달방법
