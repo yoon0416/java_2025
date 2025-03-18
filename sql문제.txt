@@ -54,7 +54,29 @@ mysql> create table salagrade(
     -> losal int(11),
     -> hisal int(11)
     -> );
+---
+Q1.
+→ create database mbasic;
+→ use mbasic;
+→ create table userinfo_repeat(
+no int not null auto_increment primary key,
+name varchar(10) not null,
+age int not null
+);
 
+Q2.
+→ alter table userinfo_repeat change name name varchar(100) not null;
+
+Q3.
+→ alter table userinfo_repeat add email varchar(50);
+
+Q4.
+→ alter table userinfo_repeat drop email;
+
+Q5.
+→ rename table userinfo_repeat to userinfo;
+||
+→ alter table userinfo_repeat rename userinfo;
 
 
 
