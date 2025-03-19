@@ -93,7 +93,7 @@ select * from score; #데이터확인
 #실습3) delete
 
 -- 준비
-use mbasic;
+
 create table userinfo_delete select * from userinfo;
 alter table userinfo_delete add primary key(no);
 alter table userinfo_delete modify no int not null auto_increment;
