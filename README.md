@@ -80,6 +80,7 @@
 | **2025-03-16** | 부족하다고 느낀 람다식 공부, [bank 미니 프로젝트 인터페이스버전(7.8) 구현](https://github.com/yoon0416/java_2025/tree/main/java_basic/src/bank)|
 | **2025-03-17** | Mysql, jsp|
 | **2025-03-18** | Mysql `update`,`insert`,`delete`, jsp db연동 방법|
+| **2025-03-19** | Mysql `update`,`insert`,`delete` 연습문제, jsp db연결 실습, bank db 틀 만들기, bank jsp구현 시작 |
 
 ---
 
