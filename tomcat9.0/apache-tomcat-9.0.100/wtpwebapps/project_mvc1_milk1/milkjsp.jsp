@@ -13,9 +13,11 @@
         <h3 class="card-header text-center">WEBSTANDARD+TABLE</h3>
 
         <table class="table table-bordered text-center">
+            <caption>!</caption>
             <thead class="table-warning">
+            
                 <tr>
-                    <th>MNO</th>
+                    <th scope ="col">MNO</th>
                     <th>MNAME</th>
                     <th>MPRICE</th>
                 </tr>

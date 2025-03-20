@@ -37,6 +37,9 @@ delete   (delete)
 테스트1 → delete from userinfo where id ='test1'; //정상작동
 테스트1 → delete from userinfo where no=1; //정상작동 ※
 
+
+> 삭제를 해도 no값이 1로 초기화가 되는게 아님 고유키라고 생각하면 편할 듯? 물론 나중에는 원리 알고 이렇게 쓸지말지 결정
+> 그래서 id가 아닌 no값으로 찾기
 /*
 
  
@@ -262,3 +265,18 @@ delete   (delete)
 입력 >> 9
 
 */
+
+
+칼리리눅스 vs 리눅스
+
+
+
+
+
+
+
+
+
+
+
+

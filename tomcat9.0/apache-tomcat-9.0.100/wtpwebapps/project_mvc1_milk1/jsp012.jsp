@@ -15,8 +15,8 @@
 </div> <!-- bg-primary 파랑, danger(빨강), waring(노랑), dark(블랙),info(하늘색),secondary(회색) -->
     <div class="container card my-5">
         <h3 class="card-header text-center">Milk Order</h3>
-        
         <table class="table table-dark table-striped table-hover my-5" >
+  
         <caption>우유주문현황</caption>
 	    <thead>
 	      <tr>
@@ -26,7 +26,7 @@
 	      </tr>
 	    </thead>
 	    <tbody>
-	     
+	
         
         <%
         // DB 연결을 위한 변수 선언
@@ -78,5 +78,18 @@
         </tbody>
         </table>
     </div>
+	<form action="jsp_score_result.jsp" method="post">
+	<div class="container card my-5">
+		<div class="mb-3 mt-3">
+			<label for="milkname" class="form-label">우유이름 </label> <input type="text"
+				class="form-control" id="milkname" name="milkname">
+		</div>
+		<div class="mb-3 mt-3">
+			<label for="milkprice" class="form-label">우유가격 </label> <input type="text"
+				class="form-control" id="milkprice" name="milkprice">
+		</div>
+		 <button type="submit" class="btn btn-danger" title="pro">milk 데이터 삽입</button>
+	</div>
+	</form>
 </body>
 </html>
