@@ -83,7 +83,7 @@
 | **2025-03-17** | Mysql, jsp|
 | **2025-03-18** | Mysql `update`,`insert`,`delete`, jsp db연동 방법|
 | **2025-03-19** | Mysql `update`,`insert`,`delete` 연습문제, jsp db연결 실습, bank db 틀 만들기, bank jsp구현 시작 |
-| **2025-03-20** | Mysql `order by`,`limit`,group by |
+| **2025-03-20** | Mysql `order by`,`limit`,`group by`, milk.jsp와 milk_order db 연결 |
 
 
 ---
