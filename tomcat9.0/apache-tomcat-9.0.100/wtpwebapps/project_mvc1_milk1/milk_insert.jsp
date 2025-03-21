@@ -36,20 +36,21 @@
         pstmt.setString(1, oname); 				// 첫 번째 ?에 oname 변수값 설정 (주문할 우유 이름)
         pstmt.setInt(2, onum); 					// 두 번째 ?에 onum 변수값 설정 (주문할 갯수)
         pstmt.setString(3, oip); 				// 세 번째 ?에 oip 변수값 설정 (주문자의 IP)
+        		//아직까진 pstmt에 임시저장 db에 안넘겨줌
 
         // 7. SQL 실행
-        int result = pstmt.executeUpdate(); 	// INSERT문 실행 → 영향을 받은 행 수를 result에 저장 (삽입 성공 여부 확인용)
-
-        if (result > 0) { // 삽입 성공 시
+        int result = pstmt.executeUpdate(); 	// INSERT문 실행 → 영향을 받은 행 수를 result에 저장 (삽입 성공 여부 확인용) db에 값넘기는 작업
+												//값을 넣거나(INSERT), 바꾸거나(UPDATE), 삭제할 때(DELETE)는 executeUpdate()를 사용
+        if (result > 0) { // 삽입 성공 시   여기 수정해야함 사용자들이 동시에 하면 주문번호가 본인게 안나올 수 있음
             // 8. 마지막으로 삽입된 주문번호(ono)를 조회
             stmt = conn.createStatement(); // db에 연결한 통로 conn에 sql을 실행할 도구를 생성할꺼다 그걸 stmt에 담을거고
             rs = stmt.executeQuery("select last_insert_id()");  // rs에 셀렉트 라스트 인설트 아이디라는 함수 실행을 넣을꺼다 (방금 삽입된 행의 id값을 가져옴)
-            if (rs.next()) { // rs행에 값이 있다면 (결과 행이 존재하면)
-                int ono = rs.getInt(1); // ono에 정수로 첫 번째 컬럼을 넣겠다 (주문번호를 정수로 꺼냄)
+            rs.next();// rs행에 값이 있다면 (결과 행이 존재하면)
+            int ono = rs.getInt(1); // ono에 정수로 첫 번째 컬럼을 넣겠다 (주문번호를 정수로 꺼냄)
 
                 // 9. 결과 처리:
                 out.println("<script>alert('주문성공! 주문번호는 " + ono + "번입니다!'); location.href='milk.jsp';</script>"); // 주문 성공 메시지와 함께 주문번호를 알림창으로 띄움
-            }
+            
         } else {
             out.println("<script>alert('관리자에게 문의 바람'); location.href='milk.jsp';</script>"); // 삽입 실패 시 알림창 표시
         }

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <title>DBDBIG</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Latest compiled and minified CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Latest compiled JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+
+<!--                                    -->
+<!--                                    -->
+<!--                                    -->
+<!--                                    -->
+<!--                                    -->
+<div class="p-3 bg-primary text-white ">
+  <h1>007. CONTROL</h1>
+  <ol>
+    <li>IF</li>
+    <li>SWITCH</li>
+    <li>FOR/WHILE/DO WHILE</li>
+  </ol>
+</div>
+<!--                                    -->
+<!--                                    -->
+<div class="container card  my-3">
+  <h3  class="card-header">007. CONTROL - Step1. IF</h3>
+  <div class="card-body">
+    <h4>Step1. IF</h4>
+    <script>
+      // 작업위치
+      /*
+        if(조건) {  조건이 맞으면 true }
+        else{   조건이 다르면 false }
+      */ 
+
+      // 1. 출력구문
+      document.write("정리1. 출력");
+      document.write("<p>하고싶은 말!</p>");
+      console.log("var 같은 스코프 안에 변수 재선언 가능, let 불가능");
+
+      //2. var, let, const
+      // var   - var는 전역변수가 될 수 있고, 같은 스코프에서 재선언이 가능하기 때문에, 
+      // for문이나 if문에서 선언한 변수가 외부 변수 값을 덮어씌울 수 있음
+     
+      // let   - 지역변수 (변수중복 선언불가)
+      // const - 상수 
+
+      //3. 자료형
+      document.write("정리3. 자료형");
+      let d1; console.log(d1); //undefined
+     // d1=10; d1=3.14; d1="abc"; d1=ture; d1=["sally",3,7.8];
+      //d1=function(){};
+
+      test3=10;
+      console.log(test3 + "10"); //원하는결과 20
+      console.log(typeof(test3)+typeof("10"));
+      console.log(test3+Number("10"));
+
+      //4. 알림창
+      alert("ㅎㅇ");
+      
+    </script>
+    <button class="btn btn-outline-primary" onclick="alert('알림창')">alert</button>
+    <button class="btn btn-outline-primary" onclick="prompt('프롬포트')">prompt</button>
+    <button class="btn btn-outline-primary" onclick="confirm('집가고싶다')">confirm</button>
+
+  </div>
+  <!--     -->
+  <!--     -->
+  <hr/>
+  
+  <div class="card-body">
+    <h4>EX</h4>
+    <pre>
+      평균을 입력하세요 __입력받기
+      만약 평균이 60점 이상(60점포함)이라면 합격, 아니면 불합격 출력
+    </pre>
+    <input type="button" value="ex1"  id="ex1"  title="버튼을 클릭하세요" class="btn btn-success"/>
+    <script>
+  // 작업위치
+  window.onload = function(){  
+    document.getElementById("ex1").onclick = function(){
+        let score=0;
+        let a = prompt('숫자입력 ㄱ');
+        score=Number(a);
+        if(score>=60){
+          alert("합ㄱ격");
+         }
+         else if(score<60){
+          alert("불합격");
+         }
+         else{
+          alert("숫자 입력해라");
+         }
+       };
+      };
+      
+    </script>
+  </div>
+</div>
+
+
+
+
+<!--                                    -->
+<!--                                    -->
+<div class="container card  my-3">
+  <h3  class="card-header">007. CONTROL - Step2. SWITCH</h3>
+  <div class="card-body">
+    <h4>Step2. SWITCH</h4>
+    <script>
+    /*
+    swtich(  처리하고 싶은 대상    ){
+        case 대상의상태:    처리;  break;
+        case 대상의상태:    처리;  break;
+        case 대상의상태:    처리;  break;
+        default : 기본처리
+    } */
+
+    // 작업위치
+   
+    </script>
+  </div>
+  <!--     -->
+  <!--     -->
+  <hr/>
+  <div class="card-body">
+    <h4>EX</h4>
+    <pre>
+      4,5,6 중에 입력하세요
+      4번 월드콘  ,  5번 구구콘 , 6번 설레임 알림창을 띄우시오.
+    </pre>
+    <input type="button" value="switch1"  id="switch1"  title="버튼을 클릭하세요" class="btn btn-success"      />
+    <script>
+  // 작업위치
+  //1. switch 
+      // let  ice=5;
+      // switch(ice){
+      //   case 4 : alert('월드콘'); break;
+      //   case 5 : alert('구구콘'); break;
+      //   case 6 : alert('설레임'); break;
+      // }
+  //2.  switch1    
+
+  window.onload = function(){  
+  document.getElementById("switch1").onclick = function(){
+    let ice=5;
+    let a = prompt('4,5,6 중에서 입력하세요');
+    ice=Number(a);
+    switch(ice){
+      case 4 : alert('월드콘'); break;
+      case 5 : alert('구구콘'); break;
+      case 6 : alert('설레임'); break;
+      default : alert("4,5,6중에서 입력하라고"); break;
+    }
+  };
+  };
+
+    </script>
+  </div>
+</div>
+
+
+
+
+<!--                                    -->
+<!--                                    -->
+<div class="container card  my-3">
+  <h3  class="card-header">007. CONTROL - Step3. FOR/WHILE/DO WHILE</h3>
+  <div class="card-body">
+    <h4>Step3. FOR/WHILE/DO WHILE</h4>
+      <script>
+      /* STEP1 for  - 반복횟수 알때
+         for(  초기문; 조건문; 증감문 ){  }
+      */
+        
+
+        //1. 영역 :  복붙-복사하는 한줄 { 반복되는 영역 }    -  {  console.log(1); }
+        //2. 변수 : {반복 영역 - 변수}                      -  {  console.log(i); }    
+        //3. 패턴 : for(시작; 종료; 변화) 
+        
+      // 작업위치
+      </script>
+  </div>
+  <!--     -->
+  <!--     -->
+  <hr/>
+  <div class="card-body">
+    <h4>EX</h4>
+    <pre>
+    for 
+    Q1)		1	2	3	4	5
+    Q2)		5	4	3	2	1
+    Q3)		2	4	6 
+    Q4)		hello1		hello2		hello3
+    </pre>
+    <script>
+      // for, while, do while
+      //A1)		1	2	3	4	5
+      console.log("-----------------------------");
+      for(let i=1; i<6; i++){
+        console.log(i);
+      }
+      console.log("-----------------------------");
+      
+      let i = 1;
+    while (i < 6) {
+    console.log(i);
+    i++;
+}
+
+
+
+
+
+
+      //A2)		5	4	3	2	1
+      for(let i=5; i>0; i--){
+        console.log(i);
+      }
+      console.log("-----------------------------");
+
+      //A3)		2	4	6
+      for(let i=2; i<7; i += 2){
+        console.log(i);
+      }
+      console.log("-----------------------------");
+
+      //A4)		hello1		hello2		hello3
+      for(let i=1; i<4; i++){
+        console.log("hello"+i);
+      }
+
+      //A5) 향상된 포문
+      const list1=[1,2,3,4,5];
+      
+      for(const a of list1 ){
+        console.log(a);
+      }
+
+
+    </script>
+  </div>
+</div>
+
+
+</body>
+</html>

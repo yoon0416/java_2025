@@ -182,7 +182,7 @@
 									type="number" class="form-control" id="pwd"
 									placeholder="우유갯수를 적어주세요" name="onum">
 							</div>
-							<button type="submit" class="btn btn-primary">주문하기</button>
+							<button type="submit" class="btn btn-primary" id="divide">주문하기</button>
 						</form>
 						<!--  -->
 						<!--  -->
@@ -190,6 +190,28 @@
 					</div>
 				</div>
 			</div>
+			<script> 
+			let btn = document.getElementById("divide");
+
+		    btn.onclick = function () {
+		      let oname = document.getElementById("oname");
+		      let onum = document.getElementById("onum");
+
+		      if (oname.value.trim() === "") {
+		        alert("우유 이름을 입력해주세요.");
+		        oname.focus();
+		        return;
+		      }
+
+		      if (onum.value.trim() === "") {
+		        alert("우유 갯수를 입력해주세요.");
+		        onum.focus();
+		        return;
+		      }
+
+		      // 조건 만족하면 수동으로 폼 제출
+		      document.getElementById("milkForm").submit();
+		      }</script>
 
 			<!-- 주문수정  -->
 			<!-- 주문수정  -->

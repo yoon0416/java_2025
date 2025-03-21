@@ -38,7 +38,7 @@
 
         // 10. 결과 처리
         if (result > 0) {
-            out.println("<script>alert('주문 취소 완료!'); location.href='milk.jsp';</script>");
+            out.println("<script>alert('주문번호"+ono+"번 주문 취소 완료!'); location.href='milk.jsp';</script>");
         } else {
             out.println("<script>alert('해당 주문 번호가 존재하지 않거나 이미 취소된 주문입니다. 관리자에게 문의 바랍니다.'); location.href='milk.jsp';</script>");
         }

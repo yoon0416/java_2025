@@ -12,6 +12,7 @@
     // 3. DB 연결을 위한 변수 선언
     Connection conn = null;
     PreparedStatement pstmt = null;
+
     
     // DB 접속 정보
     String url = "jdbc:mysql://localhost:3306/milk_order"; // DB URL
@@ -42,7 +43,7 @@
 
         // 10. 결과 처리
         if (result > 0) {
-            out.println("<script>alert('주문 수정 완료!'); location.href='milk.jsp';</script>");
+            out.println("<script>alert('주문번호 " + ono + "번 주문 수정 완료!'); location.href='milk.jsp';</script>");
         } else {
             out.println("<script>alert('해당 주문 번호가 존재하지 않거나 이미 취소된 주문입니다. 관리자에게 문의 바랍니다.'); location.href='milk.jsp';</script>");
         }
