@@ -1,0 +1,15 @@
+Q1
+select no,name,age,sex,sns,if(sns='n','수신거부','수신가능')'수신여부상태' from if_userinfo;
+
+Q2
+select no,name,age,sex,sns,if(age>20,'성인','미성년자') '성인여부' from if_userinfo;
+
+Q3
+select if(sns='n',count(*),0) from if_userinfo group by sns;
+
+Q4
+select ename,deptno, case when deptno=10 then'ACCOUNTING' when deptno=20 then 'RESEARCH' when deptno=30 then 'SALES' end '부서명' from emp;
+
+Q5
+select ename,job,case when job='CLERK' then '판매원' when job='SALESMAN' then '영업사원' else '사원' end 'job2' from emp;
+
