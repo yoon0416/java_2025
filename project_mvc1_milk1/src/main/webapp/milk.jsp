@@ -89,70 +89,73 @@
 
 	<!-- 주문현황 -표 -->
 	<!-- 주문현황 -표 -->
-<div class="container card my-5">
-    <h3 class="card-header bg-dark text-white">MILK ORDER</h3>
-    <table class="table table-striped table-bordered table-hover">
-        <caption>milk 주문현황</caption>
-        <thead>
-            <tr>
-                <th scope="col">NO</th>
-                <th scope="col">NAME</th>
-                <th scope="col">NUM</th>
-                <th scope="col">주문날짜</th>
-            </tr>
-        </thead>
-        <tbody>
-            <%@ page import="java.sql.*" %>
-            <%
-                // DB 연결을 위한 변수 선언
-                Connection conn2 = null;
-                PreparedStatement pstmt2 = null;
-                ResultSet rset2 = null;
+	<div class="container card my-5">
+		<h3 class="card-header bg-dark text-white">MILK ORDER</h3>
+		<table class="table table-striped table-bordered table-hover">
+			<caption>milk 주문현황</caption>
+			<thead>
+				<tr>
+					<th scope="col">NO</th>
+					<th scope="col">NAME</th>
+					<th scope="col">NUM</th>
+					<th scope="col">주문날짜</th>
+				</tr>
+			</thead>
+			<tbody>
+				<%@ page import="java.sql.*"%>
+				<%
+				// DB 연결을 위한 변수 선언
+				Connection conn2 = null;
+				PreparedStatement pstmt2 = null;
+				ResultSet rset2 = null;
 
-                try {
-                    // 1. 드라이버 연동
-                    Class.forName("com.mysql.cj.jdbc.Driver");
-                    
-                    // 2. DB 연동
-                    conn2 = DriverManager.getConnection("jdbc:mysql://localhost:3306/milk_order", "root", "1234");
+				try {
+					// 1. 드라이버 연동
+					Class.forName("com.mysql.cj.jdbc.Driver");
 
-                    // 3. PreparedStatement
-                    pstmt2 = conn2.prepareStatement("SELECT * FROM milk_order");
+					// 2. DB 연동
+					conn2 = DriverManager.getConnection("jdbc:mysql://localhost:3306/milk_order", "root", "1234");
 
-                    rset2 = pstmt2.executeQuery(); // SELECT 실행
+					// 3. PreparedStatement
+					pstmt2 = conn2.prepareStatement("SELECT * FROM milk_order");
 
-                    while (rset2.next()) { // 결과 행을 반복
-                        // 컬럼에 맞게 수정: `ono`, `oname`, `onum`, `odate`
-                        int ono = rset2.getInt("ono");
-                        String oname = rset2.getString("oname");
-                        int onum = rset2.getInt("onum");
-                        String odate = rset2.getString("odate"); 
-	
-            %>
-            <tr>
-                <td><%= ono %></td>
-                <td><%= oname %></td>
-                <td><%= onum %></td>
-                <td><%= odate %></td> <!-- 주문 날짜 출력 -->
-            </tr>
-            <%
-                    }
-                } catch (Exception e) {
-                    e.printStackTrace();
-                } finally {
-                    // 자원 정리
-                    try {
-                        if (rset2 != null) rset2.close();
-                        if (pstmt2 != null) pstmt2.close();
-                        if (conn2 != null) conn2.close();
-                    } catch (SQLException e) {
-                        e.printStackTrace();
-                    }
-                }
-            %>
-        </tbody>
-    </table>
-</div>
+					rset2 = pstmt2.executeQuery(); // SELECT 실행
+
+					while (rset2.next()) { // 결과 행을 반복
+						// 컬럼에 맞게 수정: `ono`, `oname`, `onum`, `odate`
+						int ono = rset2.getInt("ono");
+						String oname = rset2.getString("oname");
+						int onum = rset2.getInt("onum");
+						String odate = rset2.getString("odate");
+				%>
+				<tr>
+					<td><%=ono%></td>
+					<td><%=oname%></td>
+					<td><%=onum%></td>
+					<td><%=odate%></td>
+					<!-- 주문 날짜 출력 -->
+				</tr>
+				<%
+				}
+				} catch (Exception e) {
+				e.printStackTrace();
+				} finally {
+				// 자원 정리
+				try {
+				if (rset2 != null)
+					rset2.close();
+				if (pstmt2 != null)
+					pstmt2.close();
+				if (conn2 != null)
+					conn2.close();
+				} catch (SQLException e) {
+				e.printStackTrace();
+				}
+				}
+				%>
+			</tbody>
+		</table>
+	</div>
 
 
 	<div class="container card  bg-dark  my-5">
@@ -171,47 +174,46 @@
 					<div class="card-body">
 						<!--  -->
 						<!--  -->
-						<form action="milk_insert.jsp" method="post">
+						<form action="milk_insert.jsp" method="post" id="milkForm">
 							<div class="mb-3 mt-3">
-								<label for="email" class="form-label">주문할 우유이름</label> <input
-									type="text" class="form-control" id="email"
+								<label for="oname" class="form-label">주문할 우유이름</label> <input
+									type="text" class="form-control" id="oname"
 									placeholder="주문할 우유이름을 적어주세요" name="oname">
 							</div>
 							<div class="mb-3">
-								<label for="pwd" class="form-label">주문할 우유갯수</label> <input
-									type="number" class="form-control" id="pwd"
+								<label for="onum" class="form-label">주문할 우유갯수</label> <input
+									type="number" class="form-control" id="onum"
 									placeholder="우유갯수를 적어주세요" name="onum">
 							</div>
-							<button type="submit" class="btn btn-primary" id="divide">주문하기</button>
+							<button type="button" class="btn btn-primary" id="divide">주문하기</button>
 						</form>
 						<!--  -->
 						<!--  -->
-
 					</div>
 				</div>
 			</div>
-			<script> 
-			let btn = document.getElementById("divide");
 
-		    btn.onclick = function () {
-		      let oname = document.getElementById("oname");
-		      let onum = document.getElementById("onum");
+			<script>
+				let btn = document.getElementById("divide");
 
-		      if (oname.value.trim() === "") {
-		        alert("우유 이름을 입력해주세요.");
-		        oname.focus();
-		        return;
-		      }
+				btn.onclick = function() {
+					let oname = document.getElementById("oname");
+					let onum = document.getElementById("onum");
 
-		      if (onum.value.trim() === "") {
-		        alert("우유 갯수를 입력해주세요.");
-		        onum.focus();
-		        return;
-		      }
+					if (oname.value.trim() === "") {
+						alert("우유 이름 ㄱ");
+						oname.focus();
+						return;
+					}
 
-		      // 조건 만족하면 수동으로 폼 제출
-		      document.getElementById("milkForm").submit();
-		      }</script>
+					if (onum.value.trim() === "") {
+						alert("우유 갯수 입력 ㄱ ");
+						onum.focus();
+						return;
+					}
+					document.getElementById("milkForm").submit();
+				}
+			</script>
 
 			<!-- 주문수정  -->
 			<!-- 주문수정  -->
