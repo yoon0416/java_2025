@@ -85,7 +85,6 @@
 | **2025-03-19** | Mysql `update`,`insert`,`delete` 연습문제, jsp db연결 실습, bank db 틀 만들기, bank jsp구현 시작 |
 | **2025-03-20** | Mysql `order by`,`limit`,`group by`, milk.jsp와 milk_order db 연결, `select last_insert_id();` 이거 뭔지 공부해야함|
 | **2025-03-21** | Mysql `if`,`case`,`string`,jsp 이해는 milk로, 그그그그그 유효성검사 js이용, js기초 복습|
-| **2025-03-22** | my sql세팅, python api 연결|
 | **2025-03-24** | Mysql `join`, jsp: r하|
 
 ---
