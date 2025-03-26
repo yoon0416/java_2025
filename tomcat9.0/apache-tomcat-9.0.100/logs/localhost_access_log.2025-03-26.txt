@@ -442,3 +442,12 @@
 0:0:0:0:0:0:0:1 - - [26/Mar/2025:17:07:18 +0900] "GET /project_mvc1_milk1/images/login.png HTTP/1.1" 404 -
 0:0:0:0:0:0:0:1 - - [26/Mar/2025:17:07:24 +0900] "POST /project_mvc1_milk1/Jsp025_login HTTP/1.1" 200 77
 0:0:0:0:0:0:0:1 - - [26/Mar/2025:17:07:25 +0900] "GET /project_mvc1_milk1/jsp022_my.jsp HTTP/1.1" 200 2178
+127.0.0.1 - - [26/Mar/2025:17:12:38 +0900] "GET / HTTP/1.1" 200 11430
+0:0:0:0:0:0:0:1 - - [26/Mar/2025:17:12:39 +0900] "GET /project_mvc1_milk1/jsp025_login.jsp HTTP/1.1" 200 5133
+0:0:0:0:0:0:0:1 - - [26/Mar/2025:17:12:39 +0900] "GET /project_mvc1_milk1/images/login.png HTTP/1.1" 404 -
+0:0:0:0:0:0:0:1 - - [26/Mar/2025:17:12:42 +0900] "POST /project_mvc1_milk1/Jsp025_login HTTP/1.1" 200 118
+0:0:0:0:0:0:0:1 - - [26/Mar/2025:17:13:10 +0900] "GET /project_mvc1_milk1/jsp022_login.jsp HTTP/1.1" 200 5105
+0:0:0:0:0:0:0:1 - - [26/Mar/2025:17:13:10 +0900] "GET /project_mvc1_milk1/images/login.png HTTP/1.1" 404 -
+0:0:0:0:0:0:0:1 - - [26/Mar/2025:17:13:49 +0900] "POST /project_mvc1_milk1/user_join HTTP/1.1" 200 84
+0:0:0:0:0:0:0:1 - - [26/Mar/2025:17:13:50 +0900] "GET /project_mvc1_milk1/jsp025_login.jsp HTTP/1.1" 200 5133
+0:0:0:0:0:0:0:1 - - [26/Mar/2025:17:13:50 +0900] "GET /project_mvc1_milk1/images/login.png HTTP/1.1" 404 -
