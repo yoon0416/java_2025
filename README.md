@@ -86,7 +86,8 @@
 | **2025-03-20** | Mysql `order by`,`limit`,`group by`, milk.jsp와 milk_order db 연결, `select last_insert_id();` 이거 뭔지 공부해야함|
 | **2025-03-21** | Mysql `if`,`case`,`string`,jsp 이해는 milk로, 그그그그그 유효성검사 js이용, js기초 복습|
 | **2025-03-24** | Mysql `join`, jsp: r하|
-| **2025-03-26** | JSP dbcp, mvc1 vs mvc2 머리로 이해된거 없음 복습해야함 ㅎ|
+| **2025-03-26** | JSP dbcp, mvc1 vs mvc2 |
+| **2025-03-27** | board 프로젝트 틀 만들기, `FrontController]   *.do` 아무튼 배움 집가서 복습해야함|
 
 ---
 
