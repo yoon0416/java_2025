@@ -24,7 +24,7 @@
 				<label for="check"       class="form-label">아이디 기억하기 </label>
 			</div>	
 			<div class="my-3 text-end"> 
-				<input type="submit" title="login 하러가기" class="btn btn-success" value="회원가입" />      
+				 <button type="submit" class="btn btn-primary" id="divide">글쓰기</button>    
 			</div>								
 		</form>
 		<script>
