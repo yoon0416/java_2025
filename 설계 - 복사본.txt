@@ -1,0 +1,69 @@
+DB : table명 - board
+글번호	bno		int	     not null,auto_increment pk
+글제목	btitle		varchar(1000) not null
+글내용	bcontent		text	      not null
+글쓴이 	bname		varchar(100)   not null
+조회수	bhit		int	                   default(0)
+글쓴날짜  bdate		timestamp     not null  default current_timestamp
+아이피	bip		varchar(100)   not null
+
+-글pw	bpw
+
+
+DTO           : [com.company.domain] - BoardVO private
+DBManager :  [com.company.dbmanager] - DBManager
+DAO          : [com.company.dao] - BoardDao
+............................................................................................................................................................
+글쓰기: 
+insert into board (btitle, bcontent, bname, bip) values (?,?,?,?);
+
+최신글읽기:
+select * from board order by bno desc >> 늦게 올릴수록 bno값 커지니까
+
+해당글읽기:
+select * from board where bno=?
+ 조회수: update board set bhit=bhit+1 where bno=? 
+
+해당글수정
+ 수정폼 : select * from board where bno=?
+update board set btitle=? bcontent=? where bno=?
+
+해당글삭제
+delect from board where bno=?
+..................................................................................................................................................................
+executeQuery - select (표)
+executeUpdate - insert, update, delete (실행줄수)
+
+리턴값 메서드명() {}  
+
+
+  1. 글쓰기             -  insert   into  board (  btitle  , bcontent, bname , bip   )  values (  ?,?,?,?  )
+- public int insert( BoardVO vo){ result 0; }
+
+  2. 최신글읽기       -  select * from board order by bno desc
+- public ArrayList<BoardVO> selectAll(){ result null; }
+
+  3. 해당글읽기/해당글수정폼        -  select * from board where  bno =?
+- public BoardVO select( int bno ){ return null; }
+
+  4. 조회수증가       -  update board  set  bhit=bhit+1  where  bno=?
+- public int updateHit( int bno ){ return 0; }
+
+  5. 해당글수정기능 -  update  board  set  btitle=? , bcontent=?  where bno=?
+- public int update ( BoardVO vo) { return 0; }
+
+  6. 해당글삭제       -  delete   from board  where bno=?
+- public int delect(int bno) { return 0; }
+
+
+test
+
+
+
+
+
+
+
+cmd 한글
+ set character set euckr;
+ 

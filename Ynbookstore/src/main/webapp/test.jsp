@@ -69,6 +69,7 @@
 		//System.out.println(dao.select(4));
 	
 		//2. insert(BoardVO vo) - btitle, bcontent, bname
+		
 		/*
 		BoardVO vo = new BoardVO();
 		vo.setBtitle("제목");

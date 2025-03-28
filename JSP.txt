@@ -1,3 +1,5 @@
+■PART001 
+
 ■1. WEB
 1. WEB
 - TCP/IP 기반으로 연결되어 있는 컴퓨터네트워크 
@@ -148,10 +150,15 @@ Connection conn = ds.getConnection();
 
 >> 
 
+■ PART002
+#1. frontcontroller board게시판 완성
+#2. 개발사이트 api + ajax
+#3. [숙제] - api 2개 이상 / upgrade 기능업그레이드
 
-
-
-
+1) dynamic web project - Ybookstore
+2) inc - header/footer
+3) error page 설정 - 404, 500
+4) dbcp 연동
 
 
 
