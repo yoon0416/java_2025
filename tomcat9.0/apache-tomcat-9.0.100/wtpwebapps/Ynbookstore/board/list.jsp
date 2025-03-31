@@ -4,7 +4,7 @@
 
 
 <div class="container my-5">
-	<h3>NAVER BOOK</h3>
+	<h3>네이버쇼핑</h3>
 	<div class="result">
 	</div>
 	
@@ -22,16 +22,16 @@
 	        	 //1. 데이터 분해
 	        	 //console.log(json); 
 	        	 let items = json.items;
-	        	// console.log(items[0]); //객체한개 = {title:"",image:""}
+	        	 console.log(items[0]); //객체한개 = {title:"",image:""}
 	        	 
 	        	 for(let i=0; i<items.length; i++){
 	        		 let div = $('<div class="card my-3">'); //<div></div> 태그만들기
 	        		 let p1 = $('<div class="card-body">').html('<img src="'+items[i].image+'"style="width: 200px; height: auto;"/>');
 	        		 let p2 = $('<div class="card-body" >').html(items[i].title); //html reset해서 넣기
-	        		 let p25 = $('<div class="card-body" >').html('저자 : '+items[i].author);
+	        		 let p25 = $('<div class="card-body" >').html('브랜드 : '+items[i].brand);
 	        		 let p3 = $('<div class="card-body">').html('<a href="'+items[i].link+'"/>'+items[i].title+'</a>'); 
-	        		 let p35 = $('<div class="card-body">').html('출판사 : '+items[i].publisher);
-	        		 let p4 = $('<div class="card-body">').html(items[i].discount+'원');
+	        		 let p35 = $('<div class="card-body">').html('필터 : '+items[i].category2);
+	        		 let p4 = $('<div class="card-body">').html(items[i].lprice+'원');
 	        		 
 	        		 div.append(p1).append(p2).append(p25).append(p3).append(p35).append(p4); //div태그안에 p1추가하고 p2추가
 	        		 $(".result").append(div);

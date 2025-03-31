@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+	<!-- CalcRectangle rect = new CalcRectangle() -->
+	<bean id="rect" class="com.company.iotest.CalcRectangle"/>
+	
+	<!-- CalcTriangle tri = new CalcTriangle() -->
+	<bean id="tri" class="com.company.iotest.CalcTriangle"/>
+	
+	<!-- MyArea myArea = new Myarea();
+		 MyArea.setname("sally");
+		 MyArea.setCalc("rect");
+	 -->
+	<bean id="myArea" class="com.company.iotest.MyArea">
+		<property name="name" value="sally"></property> <!-- 직접적인 값 주입시 value -->
+		<property name="calc" ref="tri"></property> <!-- 다른 bean객체 참조할 때 ref -->
+	</bean>
+
+</beans>

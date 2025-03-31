@@ -12,7 +12,7 @@ public class Network_book {
 		try {
 		// 1. URL 객체 생성
 		String apiurl = "https://openapi.naver.com/v1/search/book.json?query="
-				+ URLEncoder.encode("점프 투 ","UTF-8");
+				+ URLEncoder.encode("블레이저","UTF-8");
 		URL url = new URL(apiurl);
 		
 		// 2. HttpURLConnection

@@ -178,7 +178,7 @@
 		
 		
 		
-		<Context docBase="dbcp_test" path="/dbcp_test" reloadable="true" source="org.eclipse.jst.jee.server:dbcp_test"/></Host>
+		<Context docBase="dbcp_test" path="/dbcp_test" reloadable="true" source="org.eclipse.jst.jee.server:dbcp_test"/><Context docBase="shop" path="/shop" reloadable="true" source="org.eclipse.jst.jee.server:shop"/></Host>
    
     </Engine>
   </Service>
