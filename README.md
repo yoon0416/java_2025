@@ -84,7 +84,7 @@
 | **2025-03-24** | Mysql `join`, jsp: r하|
 | **2025-03-26** | JSP dbcp, mvc1 vs mvc2 |
 | **2025-03-27** | board 프로젝트 틀 만들기, `FrontController]   *.do` 아무튼 배움 집가서 복습해야함|
-
+| **2025-04-01** | board 스프링 프로젝트, `FrontController] |
 ---
 
 # 🎯 추가 목표
