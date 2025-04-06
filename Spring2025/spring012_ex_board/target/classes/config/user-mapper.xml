@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.company.dao.UserDao">
+
+    <!-- 데이터 삽입 -->
+    <insert id="insert" parameterType="UserDto">
+        INSERT INTO userinfo (name, age) 
+        VALUES (#{name}, #{age})
+    </insert>
+
+    <!-- 데이터 수정 -->
+    <update id="update" parameterType="UserDto">
+        UPDATE userinfo 
+        SET name = #{name}, age = #{age} 
+        WHERE no = #{no}
+    </update>
+
+    <!-- 데이터 삭제 -->
+    <delete id="delete" parameterType="UserDto">
+        DELETE FROM userinfo 
+        WHERE no = #{no}
+    </delete>
+
+    <!-- 단일 조회 (no로 한 명 조회) -->
+    <select id="selectOne" resultType="UserDto">
+        SELECT * FROM userinfo 
+        WHERE no = #{no}
+    </select>
+
+    <!-- 전체 조회 -->
+    <select id="selectAll" resultType="UserDto">
+        SELECT * FROM userinfo
+    </select>
+
+</mapper>

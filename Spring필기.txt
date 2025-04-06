@@ -420,6 +420,200 @@ Frontcontroller - 공통작업수행 → 세부 컨트롤러에 처리
 
 
 
+==================================
+#7. 유용한 기능들
+==================================
+1. jstl
+2. dto → lombok
+3. aop (관점지향)
+4. HikariCP (dbcp / sql 과정 다 보이게)
+5. Tx ( sql 여러개 실행될 때 중간에 실패하면 sql 다 처리 안되게)
+
+
+▶ jstl
+1.porm.xml
+<!-- https://mvnrepository.com/artifact/javax.servlet/jstl -->
+<dependency>
+         <groupId>javax.servlet</groupId>
+         <artifactId>jstl</artifactId>
+         <version>1.2</version>
+</dependency>
+
+2. Model
+- table
+- dto UserDto / mapper-config.xml
+- dao UserDao / user-mapper.xml / root-context.xml (등록)
+
+3. @Repository - Dao (sql 실행)
+   @Service - 비즈니스로직 - 처리하는 기능
+ 	 상세보기 : 조회수 올리는 sql/ 해당번호 상세보기데이터
+ 	 수정보기 :                           해당번호 상세보기데이터  
+ 	 글쓰기    : 이미지올리기기능 / 그 이미지이름 경로 및 데이터 insert시 저장
+
+
+
+==================================
+#8. restful
+==================================
+
+
+
+
+
+2.lombok
+
+    0. https://mvnrepository.com/artifact/org.projectlombok/lombok
+    1. https://projectlombok.org/download
+    2. 다운로드
+    3. 더블클릭 /   cmd창     java  -jar    파일이름.jar
+        설치경로 설정
+    4. spring 다시 열기
+
+    ※ 만약 인식이 안되면....
+      1. C드라이브로 스프링zip. 옮기기 - 압축풀기
+      2. 경로 짧게
+
+
+<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+<dependency>
+    <groupId>org.projectlombok</groupId>
+    <artifactId>lombok</artifactId>
+    <version>1.18.18</version>
+    <scope>provided</scope>
+</dependency>
+
+..........................................................................................
+..........................................................................................
+3. Aop(관점지향프로그래밍 : Aspect Oriented Programming )
+
+1) 핵심기능 vs 부가기능
+- 핵심기능 : 비즈니스 로직
+- 부가기능 : 비즈니스 로직 도와주는 기능
+
+
+2) Aspect
+- AOP ( Aspect Oriented Programming )
+- Aspect : 관점, 어떤행동, 시작, 완료, 반복 ,,,, 나타내는 형태
+- Advice(부가기능정의) + PointCut(적용부위) = Aspect
+
+3) 용어
+Target : 대상
+Advice : 부가기능정의
+PonitCut : 적용타겟에 메서드로 대상을 선별하는 정규식
+Weaving : Target (대상)에 Advice(부가기능)를 처리(삽입)하는 과정
+
+4) 특징
+- 프록시기반의 Aop
+- 프록시(대리)
+- 프록시 Target (대상)에 Advice(부가기능)를 처리(삽입)하는 과정에서 생성되는 객체
+
+호출 → [ Porxy[Target]  ]
+
+
+<!-- https://mvnrepository.com/artifact/org.aspectj/aspectjrt -->
+<dependency>
+    <groupId>org.aspectj</groupId>
+    <artifactId>aspectjrt</artifactId>
+    <version>1.7.3</version>
+    <scope>runtime</scope>
+</dependency>
+<!-- https://mvnrepository.com/artifact/org.aspectj/aspectjweaver -->
+<dependency>
+    <groupId>org.aspectj</groupId>
+    <artifactId>aspectjweaver</artifactId>
+    <version>1.7.3</version>
+    <scope>runtime</scope>
+</dependency>
+<!-- https://mvnrepository.com/artifact/org.springframework/spring-aop -->
+<dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-aop</artifactId>
+    <version>4.3.28.RELEASE</version>
+</dependency>
+
+
+용어	진짜 쉽게 풀이
+Target	진짜 하고 싶은 대상 (예: 회원가입 함수)
+Advice	끼워 넣을 부가기능 (예: 로그 남기기)
+PointCut	어디에 끼워 넣을지 골라주는 조건 (예: 회원가입 함수에만 적용)
+Aspect	Advice + PointCut 묶은 것 (부가기능+대상선택을 세트로 관리)
+Weaving	실제로 대상에 부가기능 끼워 넣는 과정 (실제 코드에 삽입)
+Proxy	대리인(가짜) 객체. 대신 부가기능까지 처리해주는 껍데기
+
+--
+
+피자집 비유 🍕
+
+Target: 피자 만들기
+
+Advice: "피자 만들기 전 손 씻어야지" (부가기능)
+
+PointCut: "피자 만들 때만 손 씻어야지" (언제 끼워넣을지 선택)
+
+Aspect: "피자 만들 때 손 씻기"를 하나로 묶음
+
+Weaving: 진짜 피자 만들기 전에 손 씻는 행동을 코드에 끼워넣음
+
+Proxy: 피자 요리사 옆에서 "손 씻었나요?" 대신 확인하고 대신 처리해주는 알바생
+
+..........................................................................................
+..........................................................................................
+
+4.HIkariCP(dbcp / sql 과정 다 보이게)
+
+1) pom.xml
+2) db.properties / root-context.xml
+3) hikari properties 설정
+
+-
+
+db.driverClass=net.sf.log4jdbc.sql.jdbcapi.DriverSpy
+db.url=jdbc:log4jdbc://localhost:3306/mbasic
+db.username=root
+db.password=1234
+
+----------------------------
+  <!--  DB 연결 설정 (Datasource) -->
+    <context:property-placeholder location="classpath:config/db.properties" />
+    <bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">
+        <property name="driverClassName" value="${db.driverClass}" />
+        <property name="jdbcUrl" value="${db.url}" />
+        <property name="username" value="${db.username}" />
+        <property name="password" value="${db.password}" />
+    </bean>
+    <bean id="datasource" class="com.zaxxer.hikari.HikariDataSource" 
+          destroy-method="close">
+          <constructor-arg ref="hikariConfig" />
+    </bean>
+
+
+
+
+..........................................................................................
+..........................................................................................
+
+
+5. Tx (sql 여러개 실해오딜 때 중간에 실패하면 sql 다 처리 안되게)
+- 트랜잭션
+- 여러단계의 처리를 하나의 처리처럼 다루는 기능
+- 반영(commit) / 되돌리기 (rollback)
+
+1) pom.xml 
+
+2) root-context.xml
+- DataSourceTransactionManager
+- <tx:annotion-driven/>
+
+
+
+
+
+..........................................................................................
+..........................................................................................
+
+
+
+
 
 
 
