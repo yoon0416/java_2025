@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{fragments/Layout}">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body style="background-color: #f9f9f9;">
+	<div layout:fragment="content">
+	<script>
+		let msg="[[${msg}]]"; 
+		console.log(msg);
+		if(msg == "fail"){history.go(-1); alert('정보를 확인해주세요'); }
+		else if(msg.length != 0){ alert(msg); }
+	</script>
+	
+	
+		<!--  -->
+		<div class="container" style="margin-top: 5%; min-height: 500px">
+			<h3>게시판</h3>
+			<table class="table table-striped">
+				<caption>Board - Spring Boot</caption>
+				<thead>
+					<tr>
+						<th scope="col">NO</th>
+						<th scope="col">TITLE</th>
+						<th scope="col">NAME</th>
+						<th scope="col">DATE</th>
+						<th scope="col">HIT</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="dto, status : ${list}">
+						<td th:text="${list.size() - status.index}">번호</td> <!-- 아니 왜 최신글이 1로 박혀있지 -->
+						<td><a th:href="@{|/board/detail/${dto.id}|}" th:text="${dto.btitle}">제목</a></td>
+						<td th:text="${dto.member != null ? dto.member.name : '익명'}"></td> <!-- 하 이거 안하면 에러뜰 수 있음 내꺼 완벽하지 않아서 -->
+						
+						<td th:text="${#temporals.format(dto.createDate, 'yyyy-MM-dd HH:mm')}">날짜</td>
+						<td th:text="${dto.bhit}">조회수</td>
+					</tr>
+				</tbody>
+
+
+			</table>
+			<p class="text-right ">
+				<a th:href="@{/board/insert}" class="btn btn-danger">글쓰기</a>
+			</p>
+		</div>
+		<!--  -->
+
+
+	</div>
+</body>
+</html>

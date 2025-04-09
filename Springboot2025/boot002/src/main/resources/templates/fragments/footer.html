@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeLeaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<!-- layout.html
+	<th:block th:replace="fragments/footer::footer" /> 
+	-->
+	<th:block th:fragment="footer">
+
+		<!-- Pagination -->
+		<div class="d-flex justify-content-center my-5">
+		  <ul class="pagination pagination-sm">
+		    <li class="page-item">
+		      <a class="page-link" href="#">Previous</a>
+		    </li>
+		    <li class="page-item">
+		      <a class="page-link" href="#">1</a>
+		    </li>
+		    <li class="page-item active">
+		      <a class="page-link" href="#">2</a>
+		    </li>
+		    <li class="page-item">
+		      <a class="page-link" href="#">3</a>
+		    </li>
+		    <li class="page-item">
+		      <a class="page-link" href="#">Next</a>
+		    </li>
+		  </ul>
+		</div>
+
+		<!-- Footer Info -->
+		<footer class="text-center py-4 border-top" style="background-color: #f9f9f9;">
+		  <div class="container">
+		    <p class="mb-2 small text-muted">© 2025 Yoon. All rights reserved.</p>
+		    <a href="#top" class="small text-decoration-none text-muted">Back to top ↑</a>
+		  </div>
+		</footer>
+
+	</th:block>
+
+</body>
+</html>

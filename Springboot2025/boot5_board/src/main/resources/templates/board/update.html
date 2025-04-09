@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{fragments/Layout}">
+<head>
+<meta charset="UTF-8">
+<title>글수정</title>
+</head>
+<body style="background-color: #f9f9f9;">
+<div layout:fragment="content">
+    <div class="container" style="margin-top:5%; min-height:500px">
+        <h3>MULTIBOARD - 글수정</h3>
+<form th:action="@{/board/update}" method="post" id="editForm">
+    <fieldset>
+        <legend>UPDATE</legend>
+
+        <input type="hidden" th:value="${dto.id}" name="id" />
+        <input type="hidden" th:value="${dto.member.id}" name="member_id" /> 
+
+        <div class="form-group">
+            <label for="bname">이름</label>
+            <input type="text" th:value="${dto.member.name}" id="bname" name="bname" class="form-control" readonly>
+        </div> 
+                <div class="form-group">
+                    <label for="bpass">비밀번호</label>
+                    <input type="password" th:value="${dto.bpass}" id="bpass" name="bpass" class="form-control">
+                    <span>(*) 수정, 삭제시 필수</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="btitle">제목</label>
+                    <input type="text" th:value="${dto.btitle}" id="btitle" name="btitle" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label for="bcontent">내용</label>
+                    <textarea id="bcontent" name="bcontent" cols="60" rows="10" class="form-control"
+                              th:text="${dto.bcontent}"></textarea>
+                </div>
+
+                <div class="form-group text-right">
+                    <button type="submit" class="btn btn-danger">입력</button>
+                    <button type="reset" class="btn btn-default">취소</button>
+                    <a th:href="@{/board/list}" class="btn btn-default">목록보기</a>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const form = document.getElementById('editForm');
+        form.addEventListener('submit', function(event) {
+            if (document.getElementById('bpass').value === '') {
+                alert('비밀번호를 입력하세요');
+                event.preventDefault();
+                document.getElementById('bpass').focus();
+            }
+            if (document.getElementById('btitle').value === '') {
+                alert('제목을 입력하세요');
+                event.preventDefault();
+                document.getElementById('btitle').focus();
+            }
+            if (document.getElementById('bcontent').value === '') {
+                alert('내용을 입력하세요');
+                event.preventDefault();
+                document.getElementById('bcontent').focus();
+            }
+        });
+    });
+</script>
+
+</body>
+</html>

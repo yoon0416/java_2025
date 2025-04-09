@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeLeaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{fragments/Layout}">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body style="background-color: #f9f9f9;">
+  <div layout:fragment="content">
+    <div class="container py-5">
+
+      <!-- 메인 타이틀 -->
+      <div class="mb-5 text-center">
+        <h1 class="fw-bold" style="font-size: 2.5rem;">My Space</h1>
+        <p class="text-muted">Just documenting ideas and progress.</p>
+      </div>
+
+      <div class="row g-4">
+        
+        <!-- 사이드바 -->
+        <div class="col-lg-3">
+          <div class="p-3 bg-white rounded shadow-sm">
+            <div class="text-center mb-3">
+              <div style="width: 100px; height: 100px; background: #e1e4e8; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1rem;">
+                Fake
+              </div>
+              <h5 class="mt-3">About Me</h5>
+            </div>
+            <p class="small text-muted text-center">Hi, I'm building something cool 👨‍💻</p>
+            <hr>
+            <ul class="list-unstyled">
+              <li><a href="#" class="text-decoration-none d-block py-2 text-dark">🏠 Home</a></li>
+              <li><a href="#" class="text-decoration-none d-block py-2 text-dark">📁 Projects</a></li>
+              <li><a href="#" class="text-decoration-none d-block py-2 text-dark">📝 Blog</a></li>
+              <li class="text-muted py-2">🚫 Disabled</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 메인 컨텐츠 -->
+        <div class="col-lg-9">
+          <div class="d-flex flex-column gap-4">
+
+            <!-- 카드 1 -->
+            <div class="p-4 bg-white rounded shadow-sm">
+              <h3 class="fw-bold mb-2">TITLE HEADING</h3>
+              <p class="text-muted mb-3">Title description, Dec 7, 2020</p>
+              <div style="background: #e1e4e8; height: 200px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; margin-bottom: 20px;">
+                Fake Image
+              </div>
+              <p class="mb-0" style="line-height: 1.7;">Some text.. Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+
+            <!-- 카드 2 -->
+            <div class="p-4 bg-white rounded shadow-sm">
+              <h3 class="fw-bold mb-2">TITLE HEADING</h3>
+              <p class="text-muted mb-3">Title description, Sep 2, 2020</p>
+              <div style="background: #e1e4e8; height: 200px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; margin-bottom: 20px;">
+                Fake Image
+              </div>
+              <p class="mb-0" style="line-height: 1.7;">Some text.. Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</body>
+</html>

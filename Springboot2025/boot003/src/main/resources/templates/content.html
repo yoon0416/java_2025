@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{fragments/Layout}">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body style="background-color: #f9f9f9;">
+	<div layout:fragment="content">
+		<!--  -->
+		<div class="container" style="margin-top: 5%; min-height: 500px">
+			<h3>게시판</h3>
+			<table class="table table-striped">
+				<caption>Board - Spring Boot</caption>
+				<thead>
+					<tr>
+						<th scope="col">NO</th>
+						<th scope="col">TITLE</th>
+						<th scope="col">NAME</th>
+						<th scope="col">DATE</th>
+						<th scope="col">HIT</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>1</td>
+						<td><a>title</a></td>
+						<td>name</td>
+						<td>2025-04-08 13:11:22</td>
+						<td>0</td>
+					</tr>
+					<tr>
+						<td>2</td>
+						<td><a>title-2</a></td>
+						<td>name-2</td>
+						<td>2025-04-08 13:12:47</td>
+						<td>0</td>
+					</tr>
+				</tbody>
+
+
+			</table>
+			<p class="text-right ">
+				<a href="${pageContext.request.contextPath}/board/create"
+					class="btn btn-danger">글쓰기</a>
+			</p>
+		</div>
+		<!--  -->
+
+
+	</div>
+</body>
+</html>
