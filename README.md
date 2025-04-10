@@ -109,5 +109,6 @@
 - **코딩 테스트 준비**: 백준, 프로그래머스, SWEA, 코드업
 - **API 문서 참고**: [카카오 API](https://developers.kakao.com/)
 - **잘 정리된 자바 프로젝트** https://github.com/JMsuper/java-bondtypestock-investment-strategy?tab=readme-ov-file , https://github.com/jihokim94/starbucks
+- https://us05web.zoom.us/j/88520937630?pwd=CYUmSmI1paspfPFaaC31xuWQraqEb7.1
 ---
 
